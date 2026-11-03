@@ -1,0 +1,763 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Concentr8 — Energy drink for the desk</title>
+<meta name="description" content="Concentr8 is a low-sugar sparkling energy drink built for deep work: 150 mg natural caffeine, 250 mg L-theanine and eight actives dosed openly.">
+<meta name="theme-color" content="#0B0B0C">
+<link rel="canonical" href="https://concentr8.eu/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Concentr8">
+<meta property="og:title" content="Concentr8 — Energy drink for the desk">
+<meta property="og:description" content="Concentr8 is a low-sugar sparkling energy drink built for deep work: 150 mg natural caffeine, 250 mg L-theanine and eight actives dosed openly.">
+<meta property="og:url" content="https://concentr8.eu/">
+<meta property="og:image" content="https://concentr8.eu/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Concentr8 — Energy drink for the desk">
+<meta name="twitter:description" content="Concentr8 is a low-sugar sparkling energy drink built for deep work: 150 mg natural caffeine, 250 mg L-theanine and eight actives dosed openly.">
+<meta name="twitter:image" content="https://concentr8.eu/img/og.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300..900&family=Jost:ital,wght@0,300..600;1,300..600&display=swap">
+
+<style>
+/* baseline reset the Artifact host used to provide */
+:root{
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+html{-webkit-text-size-adjust:100%}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+</style>
+<style>
+/* Layout concept: the packaging's own world — near-black studio ground, brushed
+   silver product plates, geometric type, colour only from each can's aura. */
+:root{
+  --ground:#0B0B0C;
+  --surface:#141417;
+  --fg:#F4F4F2;
+  --fg-2:#8E8E8C;
+  --rule:rgba(244,244,242,.14);
+  --rule-2:rgba(244,244,242,.26);
+  --hi:#FFFFFF;
+
+  --display:"Outfit","Helvetica Neue",Arial,sans-serif;
+  --label:"Jost","Futura","Century Gothic",Arial,sans-serif;
+
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+body{
+  background:var(--ground); color:var(--fg);
+  font-family:var(--label); font-size:16px; line-height:1.6; font-weight:400;
+  -webkit-font-smoothing:antialiased;
+}
+body::before{
+  content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top,0px);
+  z-index:60; background:var(--ground);
+}
+img{display:block; max-width:100%}
+a{color:inherit}
+h1,h2,h3{text-wrap:balance; margin:0; font-family:var(--display)}
+p{margin:0}
+ol,ul{margin:0; padding:0; list-style:none}
+
+.wrap{
+  width:100%; max-width:1220px; margin-inline:auto;
+  padding-left:max(16px,env(safe-area-inset-left,0px));
+  padding-right:max(16px,env(safe-area-inset-right,0px));
+}
+.band{padding-block:clamp(56px,8vw,112px)}
+.eyebrow{
+  font-family:var(--label); font-weight:400; font-size:.72rem;
+  letter-spacing:.3em; text-transform:uppercase; color:var(--fg-2);
+}
+.h2{
+  font-weight:800; line-height:1; font-size:clamp(2.2rem,6vw,4rem);
+  letter-spacing:-.035em;
+}
+.lede{
+  font-size:clamp(1rem,1.5vw,1.14rem); color:var(--fg-2);
+  max-width:58ch; line-height:1.65; font-weight:300;
+}
+.sec-head{display:grid; gap:16px; margin-bottom:clamp(30px,4.5vw,54px)}
+
+/* ---------- logo marks ---------- */
+.mk,.wd{
+  display:block; background:currentColor;
+  -webkit-mask-position:center; mask-position:center;
+  -webkit-mask-size:contain; mask-size:contain;
+  -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat;
+}
+.mk{
+  aspect-ratio:1181/623;
+  -webkit-mask-image:url(img/logo-lockup-white.png); mask-image:url(img/logo-lockup-white.png);
+}
+.wd{
+  aspect-ratio:2158/707;
+  -webkit-mask-image:url(img/logo-word-white.png); mask-image:url(img/logo-word-white.png);
+}
+
+/* ---------- header ---------- */
+.site-head{
+  position:sticky; top:env(safe-area-inset-top,0px); z-index:50;
+  background:rgba(11,11,12,.88); backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--rule);
+}
+.head-in{display:flex; align-items:center; gap:18px; min-height:64px; color:var(--fg)}
+.brand{display:flex; align-items:center; gap:13px; text-decoration:none; margin-right:auto}
+.brand .mk{width:30px}
+.brand .wd{width:122px}
+.nav{display:flex; align-items:center; gap:2px}
+.nav a{
+  font-family:var(--label); font-weight:400; font-size:.74rem;
+  letter-spacing:.22em; text-transform:uppercase; text-decoration:none;
+  padding:10px 13px; color:var(--fg-2); transition:color .2s ease;
+}
+.nav a:hover{color:var(--hi)}
+.nav a.cta{
+  background:var(--fg); color:var(--ground); font-weight:500; border-radius:999px;
+  padding:10px 20px; margin-left:6px;
+}
+.nav a.cta:hover{background:var(--hi); color:var(--ground)}
+:is(a,button,input,select,textarea):focus-visible{outline:2px solid var(--hi); outline-offset:3px}
+
+/* ---------- hero ---------- */
+.hero-plate{position:relative; overflow:hidden; isolation:isolate}
+.hero-plate img{width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; object-position:center 46%}
+.hero-plate::after{
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(180deg,rgba(11,11,12,.46) 0%,rgba(11,11,12,.04) 38%,rgba(11,11,12,.88) 100%);
+}
+.hero-copy{position:absolute; inset:auto 0 0 0; z-index:2; padding-bottom:clamp(20px,3.6vw,46px)}
+.hero-copy .wrap{display:grid; gap:14px; justify-items:start}
+.hero-copy .eyebrow{color:rgba(244,244,242,.76)}
+.hero-copy h1{
+  font-weight:800; font-size:clamp(2.4rem,8vw,6rem); line-height:.95;
+  letter-spacing:-.045em; color:var(--fg);
+}
+.hero-mark{width:clamp(66px,8vw,104px); color:var(--fg)}
+/* the mark's artwork is flush left; these two get a nudge so the M and the E
+   land on the same vertical as it. Script below replaces it with a measured value. */
+.hero-copy h1,.hero-copy .tagline{margin-left:-.035em}
+
+.hero-note{padding-block:clamp(28px,4.2vw,54px)}
+.hero-note .wrap{display:grid; gap:20px}
+.tagline{
+  font-family:var(--display); font-weight:700;
+  font-size:clamp(1.02rem,1.9vw,1.55rem); line-height:1.2; letter-spacing:-.03em;
+  color:var(--fg); text-wrap:nowrap;
+}
+@media (max-width:420px){.tagline{text-wrap:balance}}
+.hero-note .note{
+  color:var(--fg-2); font-weight:300; max-width:54ch;
+  font-size:clamp(1rem,1.4vw,1.1rem);
+}
+
+.specs{display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--rule-2)}
+.specs div{padding:20px 4px 22px}
+.specs dt{
+  font-family:var(--display); font-weight:700; font-size:clamp(1.4rem,3.4vw,2rem);
+  line-height:1; letter-spacing:-.03em; font-variant-numeric:tabular-nums;
+}
+.specs dd{
+  margin:9px 0 0; font-family:var(--label); font-weight:400; font-size:.66rem;
+  letter-spacing:.22em; text-transform:uppercase; color:var(--fg-2);
+}
+
+/* ---------- ticker ---------- */
+.ticker{background:var(--fg); color:var(--ground); overflow:hidden}
+.ticker-track{display:flex; width:max-content; animation:slide 38s linear infinite}
+.ticker ul{display:flex; align-items:center; flex:none}
+.ticker li{
+  font-family:var(--label); font-weight:500; font-size:.76rem;
+  letter-spacing:.28em; text-transform:uppercase; padding:14px 22px; white-space:nowrap;
+}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---------- products ---------- */
+.products{display:grid; gap:clamp(20px,3vw,40px); grid-template-columns:repeat(3,1fr)}
+.prod{display:flex; flex-direction:column; min-width:0; gap:4px}
+.prod .shot{position:relative; overflow:hidden}
+.prod .shot img{
+  width:100%; height:auto; aspect-ratio:4/5; object-fit:cover;
+  transition:transform .7s cubic-bezier(.2,.7,.3,1);
+}
+.prod:hover .shot img{transform:scale(1.035)}
+.prod-body{display:flex; flex-direction:column; gap:11px; flex:1; padding-top:20px}
+.prod h3{
+  font-weight:700; font-size:clamp(1.1rem,1.9vw,1.32rem); line-height:1.1;
+  letter-spacing:-.02em;
+}
+.prod .note{font-size:.94rem; color:var(--fg-2); font-weight:300; line-height:1.6}
+.prod .facts{
+  display:flex; flex-wrap:wrap; gap:0 14px; margin-top:auto; padding-top:14px;
+  border-top:1px solid var(--rule);
+  font-family:var(--label); font-weight:400; font-size:.63rem;
+  letter-spacing:.2em; text-transform:uppercase; color:var(--fg-2);
+}
+
+/* ---------- plates ---------- */
+.plate{position:relative; overflow:hidden}
+.plate img{width:100%; height:auto; object-fit:cover}
+.plate-cap{
+  position:absolute; inset:auto 0 0 0; padding-bottom:clamp(18px,2.8vw,34px);
+  background:linear-gradient(180deg,rgba(11,11,12,0),rgba(11,11,12,.72));
+}
+.plate-cap p{
+  font-family:var(--display); font-weight:700; font-size:clamp(1.15rem,3vw,2rem);
+  line-height:1.08; letter-spacing:-.03em; color:var(--fg); max-width:19ch;
+}
+.duo{display:grid; gap:clamp(12px,1.8vw,22px); grid-template-columns:1fr 1fr}
+.duo .plate img{aspect-ratio:4/5; object-position:center}
+
+/* ---------- recipe ---------- */
+.recipe{background:var(--surface)}
+.ings{border-top:1px solid var(--rule-2)}
+.ing{
+  display:grid; align-items:center; gap:4px 22px;
+  grid-template-columns:50px 32px minmax(130px,1.05fr) 112px minmax(158px,1.35fr) 76px;
+  padding:clamp(14px,1.8vw,20px) 6px;
+  border-bottom:1px solid var(--rule);
+  transition:background .3s ease, padding-left .3s ease;
+}
+.ing:hover{background:rgba(244,244,242,.04); padding-left:16px}
+.ing-no{
+  font-family:var(--display); font-weight:600; font-size:clamp(1rem,1.7vw,1.2rem);
+  line-height:1; color:var(--fg-2); font-variant-numeric:tabular-nums;
+  transition:color .3s ease;
+}
+.ing:hover .ing-no{color:var(--hi)}
+.ing-ico{display:flex; align-items:center; color:var(--fg)}
+.ing-ico svg{width:27px; height:27px; display:block}
+.ing-name{
+  font-family:var(--label); font-weight:400; text-transform:uppercase;
+  font-size:clamp(.74rem,1.2vw,.82rem); letter-spacing:.16em; line-height:1.4;
+  min-width:0; color:var(--fg);
+}
+.ing-dose{
+  font-family:var(--display); font-weight:700; font-size:clamp(1.1rem,1.9vw,1.4rem);
+  line-height:1; letter-spacing:-.03em; font-variant-numeric:tabular-nums; white-space:nowrap;
+}
+.ing-dose i{
+  font-style:normal; font-family:var(--label); font-weight:400; font-size:.5em;
+  letter-spacing:.2em; text-transform:uppercase; color:var(--fg-2); margin-left:5px;
+}
+.ing-line{font-size:.92rem; color:var(--fg-2); font-weight:300; min-width:0}
+.ing-tags{display:flex; gap:6px; justify-content:flex-end}
+.ing-tags b{
+  font-family:var(--label); font-weight:500; font-size:.6rem;
+  width:22px; height:22px; display:grid; place-items:center; border-radius:999px;
+  border:1px solid var(--rule); color:var(--fg-2);
+}
+.ing-tags b.on{border-color:var(--fg); color:var(--fg)}
+.key{
+  display:flex; flex-wrap:wrap; gap:6px 26px; margin-top:20px;
+  font-family:var(--label); font-weight:400; font-size:.64rem;
+  letter-spacing:.2em; text-transform:uppercase; color:var(--fg-2);
+}
+.rec-close{
+  display:grid; gap:20px clamp(24px,4vw,60px); grid-template-columns:1.1fr 1fr;
+  align-items:start; margin-top:clamp(34px,5vw,58px);
+  padding-top:clamp(24px,3.6vw,36px); border-top:1px solid var(--rule-2);
+}
+.rec-close .big{
+  font-family:var(--display); font-weight:700; font-size:clamp(1.3rem,3vw,2rem);
+  line-height:1.08; letter-spacing:-.035em; max-width:21ch;
+}
+.rec-note{color:var(--fg-2); font-size:.96rem; font-weight:300; max-width:52ch}
+.rec-foot{margin-top:26px; font-size:.78rem; color:var(--fg-2); font-weight:300; max-width:70ch}
+
+/* ---------- contact ---------- */
+.contact-grid{display:grid; gap:clamp(28px,4vw,60px); grid-template-columns:.85fr 1.15fr; align-items:start}
+.contact-aside{display:grid; gap:20px; min-width:0}
+.mailrow{display:flex; flex-wrap:wrap; align-items:center; gap:10px}
+.mailrow code{
+  font-family:var(--label); font-weight:500; font-size:.92rem; letter-spacing:.02em;
+  background:var(--surface); border:1px solid var(--rule); padding:10px 13px; border-radius:3px;
+  user-select:all; word-break:break-all;
+}
+form{display:grid; gap:16px; min-width:0}
+.row{display:grid; gap:16px; grid-template-columns:1fr 1fr}
+.field{display:grid; gap:7px; min-width:0}
+label{
+  font-family:var(--label); font-weight:400; font-size:.64rem;
+  letter-spacing:.22em; text-transform:uppercase; color:var(--fg-2);
+}
+input,select,textarea{
+  font-family:var(--label); font-size:1rem; font-weight:300; color:var(--fg);
+  background:var(--surface); border:1px solid var(--rule); border-radius:3px;
+  padding:13px 14px; width:100%; min-width:0;
+}
+textarea{resize:vertical; min-height:150px; line-height:1.6}
+input::placeholder,textarea::placeholder{color:rgba(142,142,140,.7)}
+input:focus,select:focus,textarea:focus{border-color:var(--rule-2); outline:none}
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--hi); outline-offset:2px}
+.btn{
+  font-family:var(--label); font-weight:500; font-size:.74rem;
+  letter-spacing:.22em; text-transform:uppercase; cursor:pointer;
+  background:var(--fg); color:var(--ground); border:1px solid var(--fg);
+  padding:15px 26px; border-radius:999px; text-decoration:none; display:inline-block; text-align:center;
+  transition:background .2s ease, color .2s ease;
+}
+.btn:hover{background:var(--hi); border-color:var(--hi)}
+.btn.ghost{background:transparent; color:var(--fg); border-color:var(--rule-2)}
+.btn.ghost:hover{background:var(--fg); color:var(--ground); border-color:var(--fg)}
+.err{color:var(--hi); font-size:.85rem; font-weight:500}
+.ready{
+  border:1px solid var(--rule-2); border-radius:4px; padding:clamp(18px,2.6vw,24px);
+  display:grid; gap:16px; background:var(--surface); margin-top:6px;
+}
+.ready h3{font-weight:700; font-size:1.05rem; letter-spacing:-.02em}
+.ready textarea{min-height:190px; font-size:.9rem}
+.actions{display:flex; flex-wrap:wrap; gap:12px}
+.status{font-size:.84rem; color:var(--fg-2); font-weight:300}
+
+/* ---------- footer ---------- */
+.foot{border-top:1px solid var(--rule); padding-block:clamp(36px,4.5vw,58px); color:var(--fg)}
+.foot-top{display:flex; flex-wrap:wrap; gap:26px; align-items:flex-start; justify-content:space-between}
+.foot .wd{width:188px}
+.foot-nav{display:flex; flex-wrap:wrap; gap:20px}
+.foot-nav a{
+  font-family:var(--label); font-weight:400; font-size:.68rem; letter-spacing:.22em;
+  text-transform:uppercase; text-decoration:none; color:var(--fg-2);
+}
+.foot-nav a:hover{color:var(--hi)}
+.foot-bottom{
+  display:flex; flex-wrap:wrap; gap:12px 30px; justify-content:space-between;
+  margin-top:32px; padding-top:20px; border-top:1px solid var(--rule);
+  font-size:.78rem; color:var(--fg-2); font-weight:300;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width:900px){
+  .contact-grid{grid-template-columns:1fr}
+  .rec-close{grid-template-columns:1fr}
+  .ing{
+    grid-template-columns:44px 1fr auto; gap:8px 14px; padding:19px 2px;
+    grid-template-areas:"no name dose" "no line line" "no tags ico";
+  }
+  .ing:hover{padding-left:2px}
+  .ing-no{grid-area:no; align-self:start}
+  .ing-ico{grid-area:ico; justify-content:flex-end; align-self:center}
+  .ing-name{grid-area:name}
+  .ing-dose{grid-area:dose; justify-self:end}
+  .ing-line{grid-area:line}
+  .ing-tags{grid-area:tags; justify-content:flex-start; margin-top:4px}
+}
+@media (max-width:760px){
+  .products{grid-template-columns:1fr; gap:34px}
+  .duo{grid-template-columns:1fr}
+  .specs{grid-template-columns:1fr 1fr}
+  .specs div{border-top:1px solid var(--rule)}
+  .nav a:not(.cta){padding:10px 7px; font-size:.66rem; letter-spacing:.14em}
+  .brand .wd{width:104px}
+  .row{grid-template-columns:1fr}
+  .hero-plate img{aspect-ratio:4/5; object-position:center 44%}
+  .plate img[style*="16/9"]{aspect-ratio:4/3 !important}
+}
+@media (max-width:420px){
+  .nav a:not(.cta){display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important}
+  .ticker-track{animation:none}
+}
+</style>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap head-in">
+    <a class="brand" href="#top">
+      <span class="mk" aria-hidden="true"></span>
+      <span class="wd" role="img" aria-label="Concentr8"></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#products">Products</a>
+      <a href="#recipe">Recipe</a>
+      <a class="cta" href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero-plate">
+    <img src="img/hero-runner.webp" alt="A runner cresting a green ridge under tall clouds" width="2398" height="1640" fetchpriority="high">
+    <div class="hero-copy">
+      <div class="wrap">
+        <span class="mk hero-mark" aria-hidden="true"></span>
+        <h1>Make it happen.</h1>
+        <p class="tagline">Energy drink for the desk.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="hero-note">
+    <div class="wrap">
+      <p class="note">Built for the hours that actually matter: revision, deep work, the second half of a long day. Eight actives, dosed openly, nothing to crash from.</p>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <dl class="specs">
+      <div><dt>150 mg</dt><dd>Natural caffeine</dd></div>
+      <div><dt>250 mg</dt><dd>L-theanine</dd></div>
+      <div><dt>8</dt><dd>Actives</dd></div>
+      <div><dt>250 ml</dt><dd>Low sugar</dd></div>
+    </dl>
+  </div>
+
+  <!-- TICKER -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <ul>
+        <li>Energy</li><li>·</li><li>Focus</li><li>·</li><li>Cognition</li><li>·</li>
+        <li>Low sugar</li><li>·</li><li>8 actives</li><li>·</li>
+        <li>Energy drink for the desk</li><li>·</li>
+      </ul>
+      <ul>
+        <li>Energy</li><li>·</li><li>Focus</li><li>·</li><li>Cognition</li><li>·</li>
+        <li>Low sugar</li><li>·</li><li>8 actives</li><li>·</li>
+        <li>Energy drink for the desk</li><li>·</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PRODUCTS -->
+  <section class="band" id="products">
+    <div class="wrap">
+      <div class="products">
+        <article class="prod">
+          <div class="shot"><img src="img/pair-peach.webp" alt="Peach Hibiscus can, front and back" width="1431" height="1789" loading="lazy"></div>
+          <div class="prod-body">
+            <h3>Peach Hibiscus</h3>
+            <p class="note">Ripe peach with a tart hibiscus edge. The closest thing in the range to an iced tea with the sugar taken out.</p>
+            <p class="facts"><span>250 ml</span><span>8 actives</span><span>Low sugar</span></p>
+          </div>
+        </article>
+
+        <article class="prod">
+          <div class="shot"><img src="img/pair-apple.webp" alt="Apple Elderflower can, front and back" width="1431" height="1789" loading="lazy"></div>
+          <div class="prod-body">
+            <h3>Apple Elderflower</h3>
+            <p class="note">Crisp and dry. Green apple first, elderflower underneath it, finishing closer to a cider than a soft drink. The one most people start with.</p>
+            <p class="facts"><span>250 ml</span><span>8 actives</span><span>Low sugar</span></p>
+          </div>
+        </article>
+
+        <article class="prod">
+          <div class="shot"><img src="img/pair-passion.webp" alt="Passion-fruit Ylang-Ylang can, front and back" width="1431" height="1789" loading="lazy"></div>
+          <div class="prod-body">
+            <h3>Passion-fruit Ylang-Ylang</h3>
+            <p class="note">Sharp tropical passion-fruit with ylang-ylang behind it, floral and faintly creamy. The boldest of the three.</p>
+            <p class="facts"><span>250 ml</span><span>8 actives</span><span>Low sugar</span></p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLATE -->
+  <section class="plate">
+    <img src="img/summit.webp" alt="A figure with arms spread under open sky" width="2508" height="1480" loading="lazy" style="aspect-ratio:2/1; object-fit:cover; object-position:center 30%">
+    <div class="plate-cap"><div class="wrap"><p>The hour that makes the difference</p></div></div>
+  </section>
+
+  <!-- RECIPE -->
+  <section class="band recipe" id="recipe">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">02 — The recipe</p>
+        <h2 class="h2">8 Actives</h2>
+        <p class="lede">Everything that is in the can, at the dose it is in the can. Per 250 ml.</p>
+      </div>
+
+      <ol class="ings">
+        <li class="ing">
+          <span class="ing-no">01</span>
+          <span class="ing-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M13.6 2.4 6 13.6h4.6L9.9 21.6 18 10.2h-4.7z"/></svg></span>
+          <h3 class="ing-name">Natural caffeine</h3>
+          <span class="ing-dose">150<i>mg</i></span>
+          <p class="ing-line">The lift, pressed from guarana seed.</p>
+          <span class="ing-tags"><b class="on">E</b><b class="on">F</b><b class="on">C</b></span>
+        </li>
+        <li class="ing">
+          <span class="ing-no">02</span>
+          <span class="ing-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12q3-8 6 0t6 0 6 0h2"/></svg></span>
+          <h3 class="ing-name">L-theanine</h3>
+          <span class="ing-dose">250<i>mg</i></span>
+          <p class="ing-line">Takes the edge off the caffeine.</p>
+          <span class="ing-tags"><b class="on">E</b><b class="on">F</b><b>C</b></span>
+        </li>
+        <li class="ing">
+          <span class="ing-no">03</span>
+          <span class="ing-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.6 20.1 7.3v9.4L12 21.4 3.9 16.7V7.3z"/><circle cx="12" cy="12" r="2.7"/></svg></span>
+          <h3 class="ing-name">B vitamins</h3>
+          <span class="ing-dose">50<i>% NRV</i></span>
+          <p class="ing-line">Turns what you ate into energy.</p>
+          <span class="ing-tags"><b class="on">E</b><b>F</b><b class="on">C</b></span>
+        </li>
+        <li class="ing">
+          <span class="ing-no">04</span>
+          <span class="ing-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3.6v16.8M3.6 12h16.8M6.1 6.1l11.8 11.8M17.9 6.1 6.1 17.9"/></svg></span>
+          <h3 class="ing-name">Vitamin C</h3>
+          <span class="ing-dose">40<i>mg</i></span>
+          <p class="ing-line">Keeps tiredness from creeping in.</p>
+          <span class="ing-tags"><b class="on">E</b><b>F</b><b class="on">C</b></span>
+        </li>
+        <li class="ing">
+          <span class="ing-no">05</span>
+          <span class="ing-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.2 21.8 12 12 21.8 2.2 12z"/><path d="M12 7.4 16.6 12 12 16.6 7.4 12z"/></svg></span>
+          <h3 class="ing-name">Magnesium</h3>
+          <span class="ing-dose">75<i>mg</i></span>
+          <p class="ing-line">Steadies the nerves.</p>
+          <span class="ing-tags"><b class="on">E</b><b>F</b><b class="on">C</b></span>
+        </li>
+        <li class="ing">
+          <span class="ing-no">06</span>
+          <span class="ing-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.8c3.9 4.2 6 7.6 6 10.4a6 6 0 0 1-12 0c0-2.8 2.1-6.2 6-10.4z"/><path d="M12 10.6v5M9.5 13.1h5"/></svg></span>
+          <h3 class="ing-name">Electrolytes</h3>
+          <span class="ing-dose">250<i>mg</i></span>
+          <p class="ing-line">Enough salts to stay sharp.</p>
+          <span class="ing-tags"><b class="on">E</b><b>F</b><b>C</b></span>
+        </li>
+        <li class="ing">
+          <span class="ing-no">07</span>
+          <span class="ing-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2.4 19.2 8.1 9.6l3.5 4.6 3-3.9 6.9 8.9z"/></svg></span>
+          <h3 class="ing-name">Rhodiola</h3>
+          <span class="ing-dose">200<i>mg</i></span>
+          <p class="ing-line">An arctic root for long sessions.</p>
+          <span class="ing-tags"><b>E</b><b class="on">F</b><b class="on">C</b></span>
+        </li>
+        <li class="ing">
+          <span class="ing-no">08</span>
+          <span class="ing-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.4V8.6"/><path d="M12 8.6c0-3.3 2.5-5.6 5.6-5.6 0 3.3-2.5 5.6-5.6 5.6z"/><path d="M12 13.2c0-2.7-2.1-4.6-4.6-4.6 0 2.7 2.1 4.6 4.6 4.6z"/></svg></span>
+          <h3 class="ing-name">Ginseng</h3>
+          <span class="ing-dose">200<i>mg</i></span>
+          <p class="ing-line">Holds focus when the effort drags.</p>
+          <span class="ing-tags"><b class="on">E</b><b>F</b><b class="on">C</b></span>
+        </li>
+      </ol>
+
+      <div class="key">
+        <span>E — Energy</span>
+        <span>F — Focus</span>
+        <span>C — Cognition</span>
+      </div>
+
+      <div class="rec-close">
+        <p class="big">Caffeine alone spikes, then drops. Caffeine with theanine holds.</p>
+        <p class="rec-note">That pairing is the whole idea. Low sugar means almost nothing to crash from, the vitamins and salts stop the lift thinning out, and the last two are in there for the third hour rather than the first twenty minutes.</p>
+      </div>
+
+      <p class="rec-foot">High caffeine content. Not recommended for children or for pregnant or breastfeeding women. Concentr8 is a food, not a medicine, and the recipe itself stays protected.</p>
+    </div>
+  </section>
+
+  <!-- IDEA -->
+  <section class="band" style="padding-bottom:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">03 — The idea</p>
+        <h2 class="h2">For people who stay with it</h2>
+      </div>
+    </div>
+    <div class="duo">
+      <div class="plate"><img src="img/rug.webp" alt="Two people on a rug marked with the Concentr8 logo" width="1759" height="2196" loading="lazy"></div>
+      <div class="plate"><img src="img/tiger.webp" alt="A tiger drinking at a pool, the Concentr8 mark reflected in the water" width="1738" height="2165" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section class="plate" style="margin-top:clamp(12px,1.8vw,22px)">
+    <img src="img/poster-mile.webp" alt="Concentr8 poster: go the extra mile, it's never crowded" width="1644" height="2191" loading="lazy" style="aspect-ratio:16/9; object-fit:cover; object-position:center 50%">
+  </section>
+
+  <!-- CONTACT -->
+  <section class="band" id="contact">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">04 — Contact</p>
+        <h2 class="h2">Talk to us</h2>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-aside">
+          <p class="lede">Stockists, campus partnerships, press, or a question about the formula. Write to the team and someone picks it up.</p>
+          <div>
+            <p class="eyebrow" style="margin-bottom:10px">Email</p>
+            <div class="mailrow">
+              <code id="addr">concentr8.team@gmail.com</code>
+              <button class="btn ghost" type="button" id="copyAddr">Copy address</button>
+            </div>
+          </div>
+          <p class="status">Fill in the form and it will write the email for you, ready to copy or open in your mail app.</p>
+        </div>
+
+        <form id="contactForm" novalidate>
+          <div class="row">
+            <div class="field">
+              <label for="cName">Name</label>
+              <input id="cName" name="name" type="text" autocomplete="name" placeholder="Your name">
+            </div>
+            <div class="field">
+              <label for="cEmail">Email</label>
+              <input id="cEmail" name="email" type="email" autocomplete="email" placeholder="you@example.com">
+            </div>
+          </div>
+          <div class="field">
+            <label for="cTopic">Subject</label>
+            <select id="cTopic" name="topic">
+              <option>General question</option>
+              <option>Stocking Concentr8</option>
+              <option>Campus or event partnership</option>
+              <option>Press and media</option>
+              <option>About the formula</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="cMsg">Message</label>
+            <textarea id="cMsg" name="message" placeholder="Tell us what you need."></textarea>
+          </div>
+          <p class="err" id="formErr" hidden></p>
+          <div class="actions">
+            <button class="btn" type="submit">Prepare message</button>
+          </div>
+
+          <div class="ready" id="ready" hidden>
+            <h3>Your message is ready</h3>
+            <p class="status">Copy it and send it to <strong>concentr8.team@gmail.com</strong>, or open it in your mail app. Nothing has been sent yet.</p>
+            <textarea id="composed" readonly aria-label="Composed email"></textarea>
+            <div class="actions">
+              <button class="btn" type="button" id="copyMsg">Copy message</button>
+              <a class="btn ghost" id="mailLink" href="#">Open in mail app</a>
+            </div>
+            <p class="status" id="copyStatus" hidden></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <span class="wd" role="img" aria-label="Concentr8"></span>
+        <p class="eyebrow" style="margin-top:18px">Make it happen.</p>
+      </div>
+      <nav class="foot-nav" aria-label="Footer">
+        <a href="#products">Products</a>
+        <a href="#recipe">Recipe</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Concentr8</span>
+      <span>Energy drink for the desk · 250 ml · Low sugar</span>
+      <span>High caffeine content. Not for children or pregnant women.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Optically align the hero mark, the M of "Make" and the E of "Energy" on one
+  // vertical: shift each line left by its first glyph's own side bearing.
+  function nudge(el){
+    try{
+      var cs = getComputedStyle(el);
+      var ch = (el.textContent || "").trim().charAt(0);
+      if(!ch) return;
+      var ctx = document.createElement("canvas").getContext("2d");
+      ctx.font = cs.fontStyle + " " + cs.fontWeight + " " + cs.fontSize + " " + cs.fontFamily;
+      var m = ctx.measureText(ch);
+      if(typeof m.actualBoundingBoxLeft !== "number") return;
+      el.style.marginLeft = m.actualBoundingBoxLeft.toFixed(2) + "px";
+    }catch(e){}
+  }
+  function alignHero(){
+    var els = document.querySelectorAll(".hero-copy h1, .hero-copy .tagline");
+    for(var i = 0; i < els.length; i++) nudge(els[i]);
+  }
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(alignHero); }
+  else { alignHero(); }
+  var rt;
+  addEventListener("resize", function(){ clearTimeout(rt); rt = setTimeout(alignHero, 150); });
+
+  var TO = "concentr8.team@gmail.com";
+
+  function flash(el, msg){
+    if(!el) return;
+    el.textContent = msg; el.hidden = false;
+    clearTimeout(el._t);
+    el._t = setTimeout(function(){ el.hidden = true; }, 3200);
+  }
+
+  function copyText(text, statusEl, okMsg){
+    var done = function(){ flash(statusEl, okMsg); };
+    var fail = function(){ flash(statusEl, "Copy was blocked here. Select the text and copy it manually."); };
+    try{
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(done)["catch"](fail);
+      } else { fail(); }
+    }catch(e){ fail(); }
+  }
+
+  var addrBtn = document.getElementById("copyAddr");
+  if(addrBtn){
+    addrBtn.addEventListener("click", function(){
+      copyText(TO, document.querySelector("#contact .status"), "Address copied.");
+    });
+  }
+
+  var form = document.getElementById("contactForm");
+  var errEl = document.getElementById("formErr");
+  var ready = document.getElementById("ready");
+  var composed = document.getElementById("composed");
+  var mailLink = document.getElementById("mailLink");
+  var copyStatus = document.getElementById("copyStatus");
+
+  function val(id){ var el = document.getElementById(id); return el ? el.value.trim() : ""; }
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    var name = val("cName"), email = val("cEmail"), topic = val("cTopic"), msg = val("cMsg");
+
+    if(!name || !email || !msg){
+      errEl.textContent = "Add your name, your email and a message, then try again.";
+      errEl.hidden = false; return;
+    }
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){
+      errEl.textContent = "That email address does not look right. Check it and try again.";
+      errEl.hidden = false; return;
+    }
+    errEl.hidden = true;
+
+    var subject = "Concentr8 — " + topic;
+    var body = msg + "\n\n—\n" + name + "\n" + email;
+    composed.value = "To: " + TO + "\nSubject: " + subject + "\n\n" + body;
+    mailLink.href = "mailto:" + TO + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+    ready.hidden = false;
+    ready.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  });
+
+  document.getElementById("copyMsg").addEventListener("click", function(){
+    copyText(composed.value, copyStatus, "Copied. Paste it into an email to " + TO + ".");
+  });
+})();
+</script>
+</body>
+</html>

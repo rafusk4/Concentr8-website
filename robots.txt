@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://concentr8.eu/sitemap.xml
