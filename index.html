@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Concentr8 — Energy drink for the desk</title>
-<meta name="description" content="Concentr8 is a low-sugar sparkling energy drink built for deep work: 150 mg natural caffeine, 250 mg L-theanine and eight actives dosed openly.">
+<meta name="description" content="Concentr8 is a low-sugar sparkling energy drink built for deep work: eight actives, dosed openly, in a 250 ml can.">
 <meta name="theme-color" content="#0B0B0C">
 <link rel="canonical" href="https://concentr8.eu/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -13,14 +13,14 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Concentr8">
 <meta property="og:title" content="Concentr8 — Energy drink for the desk">
-<meta property="og:description" content="Concentr8 is a low-sugar sparkling energy drink built for deep work: 150 mg natural caffeine, 250 mg L-theanine and eight actives dosed openly.">
+<meta property="og:description" content="Concentr8 is a low-sugar sparkling energy drink built for deep work: eight actives, dosed openly, in a 250 ml can.">
 <meta property="og:url" content="https://concentr8.eu/">
 <meta property="og:image" content="https://concentr8.eu/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Concentr8 — Energy drink for the desk">
-<meta name="twitter:description" content="Concentr8 is a low-sugar sparkling energy drink built for deep work: 150 mg natural caffeine, 250 mg L-theanine and eight actives dosed openly.">
+<meta name="twitter:description" content="Concentr8 is a low-sugar sparkling energy drink built for deep work: eight actives, dosed openly, in a 250 ml can.">
 <meta name="twitter:image" content="https://concentr8.eu/og.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,7 +28,6 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300..900&family=Jost:ital,wght@0,300..600;1,300..600&display=swap">
 
 <style>
-/* baseline reset the Artifact host used to provide */
 :root{
   padding-top:env(safe-area-inset-top,0px);
   padding-bottom:env(safe-area-inset-bottom,0px);
@@ -262,7 +261,7 @@ ol,ul{margin:0; padding:0; list-style:none}
 }
 .ing-tags b.on{border-color:var(--fg); color:var(--fg)}
 .key{
-  display:flex; flex-wrap:wrap; gap:6px 26px; margin-top:20px;
+  display:flex; flex-wrap:wrap; gap:6px 26px; margin-bottom:16px;
   font-family:var(--label); font-weight:400; font-size:.64rem;
   letter-spacing:.2em; text-transform:uppercase; color:var(--fg-2);
 }
@@ -288,6 +287,8 @@ ol,ul{margin:0; padding:0; list-style:none}
   user-select:all; word-break:break-all;
 }
 form{display:grid; gap:16px; min-width:0}
+.form-fields{display:grid; gap:16px; min-width:0}
+.btn[disabled]{opacity:.6; cursor:default}
 .row{display:grid; gap:16px; grid-template-columns:1fr 1fr}
 .field{display:grid; gap:7px; min-width:0}
 label{
@@ -412,8 +413,8 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
 
   <div class="wrap">
     <dl class="specs">
-      <div><dt>150 mg</dt><dd>Natural caffeine</dd></div>
-      <div><dt>250 mg</dt><dd>L-theanine</dd></div>
+      <div><dt>44 mg</dt><dd>Natural caffeine</dd></div>
+      <div><dt>1000 mg</dt><dd>Taurine</dd></div>
       <div><dt>8</dt><dd>Actives</dd></div>
       <div><dt>250 ml</dt><dd>Low sugar</dd></div>
     </dl>
@@ -484,57 +485,22 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
         <p class="lede">Everything that is in the can, at the dose it is in the can. Per 250 ml.</p>
       </div>
 
+      <div class="key">
+        <span>E — Energy</span>
+        <span>F — Focus</span>
+        <span>C — Cognition</span>
+      </div>
       <ol class="ings">
         <li class="ing">
           <span class="ing-no">01</span>
           <span class="ing-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M13.6 2.4 6 13.6h4.6L9.9 21.6 18 10.2h-4.7z"/></svg></span>
           <h3 class="ing-name">Natural caffeine</h3>
-          <span class="ing-dose">150<i>mg</i></span>
-          <p class="ing-line">The lift, pressed from guarana seed.</p>
+          <span class="ing-dose">44<i>mg</i></span>
+          <p class="ing-line">From 200 mg guarana extract, standardised to 22%.</p>
           <span class="ing-tags"><b class="on">E</b><b class="on">F</b><b class="on">C</b></span>
         </li>
         <li class="ing">
           <span class="ing-no">02</span>
-          <span class="ing-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12q3-8 6 0t6 0 6 0h2"/></svg></span>
-          <h3 class="ing-name">L-theanine</h3>
-          <span class="ing-dose">250<i>mg</i></span>
-          <p class="ing-line">Takes the edge off the caffeine.</p>
-          <span class="ing-tags"><b class="on">E</b><b class="on">F</b><b>C</b></span>
-        </li>
-        <li class="ing">
-          <span class="ing-no">03</span>
-          <span class="ing-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.6 20.1 7.3v9.4L12 21.4 3.9 16.7V7.3z"/><circle cx="12" cy="12" r="2.7"/></svg></span>
-          <h3 class="ing-name">B vitamins</h3>
-          <span class="ing-dose">50<i>% NRV</i></span>
-          <p class="ing-line">Turns what you ate into energy.</p>
-          <span class="ing-tags"><b class="on">E</b><b>F</b><b class="on">C</b></span>
-        </li>
-        <li class="ing">
-          <span class="ing-no">04</span>
-          <span class="ing-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3.6v16.8M3.6 12h16.8M6.1 6.1l11.8 11.8M17.9 6.1 6.1 17.9"/></svg></span>
-          <h3 class="ing-name">Vitamin C</h3>
-          <span class="ing-dose">40<i>mg</i></span>
-          <p class="ing-line">Keeps tiredness from creeping in.</p>
-          <span class="ing-tags"><b class="on">E</b><b>F</b><b class="on">C</b></span>
-        </li>
-        <li class="ing">
-          <span class="ing-no">05</span>
-          <span class="ing-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.2 21.8 12 12 21.8 2.2 12z"/><path d="M12 7.4 16.6 12 12 16.6 7.4 12z"/></svg></span>
-          <h3 class="ing-name">Magnesium</h3>
-          <span class="ing-dose">75<i>mg</i></span>
-          <p class="ing-line">Steadies the nerves.</p>
-          <span class="ing-tags"><b class="on">E</b><b>F</b><b class="on">C</b></span>
-        </li>
-        <li class="ing">
-          <span class="ing-no">06</span>
-          <span class="ing-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.8c3.9 4.2 6 7.6 6 10.4a6 6 0 0 1-12 0c0-2.8 2.1-6.2 6-10.4z"/><path d="M12 10.6v5M9.5 13.1h5"/></svg></span>
-          <h3 class="ing-name">Electrolytes</h3>
-          <span class="ing-dose">250<i>mg</i></span>
-          <p class="ing-line">Enough salts to stay sharp.</p>
-          <span class="ing-tags"><b class="on">E</b><b>F</b><b>C</b></span>
-        </li>
-        <li class="ing">
-          <span class="ing-no">07</span>
           <span class="ing-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.6" cy="8.2" r="2.3"/><circle cx="12" cy="13.2" r="2.3"/><circle cx="18.4" cy="7.4" r="2.3"/><path d="M7.4 9.6 10.2 11.8M13.9 11.8 16.6 9"/></svg></span>
           <h3 class="ing-name">Taurine</h3>
           <span class="ing-dose">1000<i>mg</i></span>
@@ -542,24 +508,58 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
           <span class="ing-tags"><b class="on">E</b><b class="on">F</b><b>C</b></span>
         </li>
         <li class="ing">
-          <span class="ing-no">08</span>
-          <span class="ing-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.4V8.6"/><path d="M12 8.6c0-3.3 2.5-5.6 5.6-5.6 0 3.3-2.5 5.6-5.6 5.6z"/><path d="M12 13.2c0-2.7-2.1-4.6-4.6-4.6 0 2.7 2.1 4.6 4.6 4.6z"/></svg></span>
-          <h3 class="ing-name">Ginseng</h3>
-          <span class="ing-dose">200<i>mg</i></span>
-          <p class="ing-line">Holds focus when the effort drags.</p>
+          <span class="ing-no">03</span>
+          <span class="ing-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20.4 3.6c0 9-5.6 14.2-11.2 14.2a5.6 5.6 0 0 1 0-11.2c5.6 0 11.2-1 11.2-3z"/><path d="M3.6 21c3.2-6.4 7.4-9.6 12.6-11.6"/></svg></span>
+          <h3 class="ing-name">Green tea extract</h3>
+          <span class="ing-dose">250<i>mg</i></span>
+          <p class="ing-line">Standardised EGCG, to soften the lift.</p>
+          <span class="ing-tags"><b>E</b><b class="on">F</b><b class="on">C</b></span>
+        </li>
+        <li class="ing">
+          <span class="ing-no">04</span>
+          <span class="ing-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.6 20.1 7.3v9.4L12 21.4 3.9 16.7V7.3z"/><circle cx="12" cy="12" r="2.7"/></svg></span>
+          <h3 class="ing-name">Vitamin B complex</h3>
+          <span class="ing-dose">13<i>mg</i></span>
+          <p class="ing-line">B2 through B12. Turns what you ate into energy.</p>
           <span class="ing-tags"><b class="on">E</b><b>F</b><b class="on">C</b></span>
+        </li>
+        <li class="ing">
+          <span class="ing-no">05</span>
+          <span class="ing-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3.6v16.8M3.6 12h16.8M6.1 6.1l11.8 11.8M17.9 6.1 6.1 17.9"/></svg></span>
+          <h3 class="ing-name">Vitamin C</h3>
+          <span class="ing-dose">40<i>mg</i></span>
+          <p class="ing-line">Ascorbic acid. Keeps tiredness from creeping in.</p>
+          <span class="ing-tags"><b class="on">E</b><b>F</b><b class="on">C</b></span>
+        </li>
+        <li class="ing">
+          <span class="ing-no">06</span>
+          <span class="ing-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14.8 3.4c-3.2 1.1-4.8 3.6-4.8 6.4 0 1.5.5 2.7.5 3.9 0 2.3-1.6 3.9-1.6 6.3"/><path d="M10 9.9C7.9 8.7 5.9 8.9 4.3 10.4"/><path d="M10.4 15.2c2-1.3 4.1-1.3 6 0"/></svg></span>
+          <h3 class="ing-name">Ginger extract</h3>
+          <span class="ing-dose">100<i>mg</i></span>
+          <p class="ing-line">5% gingerols. Keeps it easy on an empty stomach.</p>
+          <span class="ing-tags"><b class="on">E</b><b>F</b><b>C</b></span>
+        </li>
+        <li class="ing">
+          <span class="ing-no">07</span>
+          <span class="ing-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.4V8.6"/><path d="M12 8.6c0-3.3 2.5-5.6 5.6-5.6 0 3.3-2.5 5.6-5.6 5.6z"/><path d="M12 13.2c0-2.7-2.1-4.6-4.6-4.6 0 2.7 2.1 4.6 4.6 4.6z"/></svg></span>
+          <h3 class="ing-name">Panax ginseng</h3>
+          <span class="ing-dose">200<i>mg</i></span>
+          <p class="ing-line">4% ginsenosides, for when the effort drags.</p>
+          <span class="ing-tags"><b class="on">E</b><b>F</b><b class="on">C</b></span>
+        </li>
+        <li class="ing">
+          <span class="ing-no">08</span>
+          <span class="ing-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.8c3.9 4.2 6 7.6 6 10.4a6 6 0 0 1-12 0c0-2.8 2.1-6.2 6-10.4z"/><path d="M12 10.6v5M9.5 13.1h5"/></svg></span>
+          <h3 class="ing-name">Electrolyte blend</h3>
+          <span class="ing-dose">1400<i>mg</i></span>
+          <p class="ing-line">Magnesium, sodium, potassium and calcium.</p>
+          <span class="ing-tags"><b class="on">E</b><b>F</b><b>C</b></span>
         </li>
       </ol>
 
-      <div class="key">
-        <span>E — Energy</span>
-        <span>F — Focus</span>
-        <span>C — Cognition</span>
-      </div>
-
       <div class="rec-close">
-        <p class="big">Caffeine alone spikes, then drops. Caffeine with theanine holds.</p>
-        <p class="rec-note">That pairing is the whole idea. Low sugar means almost nothing to crash from, the vitamins and salts stop the lift thinning out, and the last two are in there for the third hour rather than the first twenty minutes.</p>
+        <p class="big">Caffeine alone spikes, then drops. Natural caffeine holds.</p>
+        <p class="rec-note">The other seven earn their place the same way the can earns its look: nothing is on there that isn't doing something. Green tea softens the lift, the vitamins and salts stop it thinning out, and ginseng is in for the third hour rather than the first twenty minutes.</p>
       </div>
 
       <p class="rec-foot">High caffeine content. Not recommended for children or for pregnant or breastfeeding women. Concentr8 is a food, not a medicine, and the recipe itself stays protected.</p>
@@ -598,14 +598,15 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
           <div>
             <p class="eyebrow" style="margin-bottom:10px">Email</p>
             <div class="mailrow">
-              <code id="addr">concentr8.team@gmail.com</code>
+              <code id="addr">info@concentr8.eu</code>
               <button class="btn ghost" type="button" id="copyAddr">Copy address</button>
             </div>
           </div>
-          <p class="status">Fill in the form and it will write the email for you, ready to copy or open in your mail app.</p>
+          <p class="status" id="asideStatus">Or use the form and we'll pick it up from there.</p>
         </div>
 
         <form id="contactForm" novalidate>
+          <div class="form-fields" id="formFields">
           <div class="row">
             <div class="field">
               <label for="cName">Name</label>
@@ -630,14 +631,20 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
             <label for="cMsg">Message</label>
             <textarea id="cMsg" name="message" placeholder="Tell us what you need."></textarea>
           </div>
+          </div>
           <p class="err" id="formErr" hidden></p>
-          <div class="actions">
-            <button class="btn" type="submit">Prepare message</button>
+          <div class="actions" id="formActions">
+            <button class="btn" type="submit" id="sendBtn">Send message</button>
           </div>
 
-          <div class="ready" id="ready" hidden>
-            <h3>Your message is ready</h3>
-            <p class="status">Copy it and send it to <strong>concentr8.team@gmail.com</strong>, or open it in your mail app. Nothing has been sent yet.</p>
+          <div class="ready" id="sent" hidden>
+            <h3>Message sent</h3>
+            <p class="status">Thanks. It's on its way to <strong>info@concentr8.eu</strong> and we'll reply to the address you gave.</p>
+          </div>
+
+          <div class="ready" id="fallback" hidden>
+            <h3>Send it from your mail app</h3>
+            <p class="status">Your message is written out below, ready to go to <strong>info@concentr8.eu</strong>. Nothing has been sent yet.</p>
             <textarea id="composed" readonly aria-label="Composed email"></textarea>
             <div class="actions">
               <button class="btn" type="button" id="copyMsg">Copy message</button>
@@ -697,40 +704,62 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
   var rt;
   addEventListener("resize", function(){ clearTimeout(rt); rt = setTimeout(alignHero, 150); });
 
-  var TO = "concentr8.team@gmail.com";
+  // ── Contact form ──────────────────────────────────────────────────────
+  // Where messages go, and the address shown on the page.
+  var TO = "info@concentr8.eu";
+
+  // Paste a form endpoint here to switch on real delivery. Free option:
+  // create a form at https://formspree.io that forwards to info@concentr8.eu
+  // and paste the URL it gives you, e.g. "https://formspree.io/f/abcdwxyz".
+  // While this is empty the form still works: it writes the message out and
+  // the visitor sends it from their own mail app. It never claims to have
+  // sent something it did not send.
+  var FORM_ENDPOINT = "";
 
   function flash(el, msg){
     if(!el) return;
     el.textContent = msg; el.hidden = false;
     clearTimeout(el._t);
-    el._t = setTimeout(function(){ el.hidden = true; }, 3200);
+    el._t = setTimeout(function(){ el.hidden = true; }, 3600);
   }
 
   function copyText(text, statusEl, okMsg){
-    var done = function(){ flash(statusEl, okMsg); };
-    var fail = function(){ flash(statusEl, "Copy was blocked here. Select the text and copy it manually."); };
+    var ok = function(){ flash(statusEl, okMsg); };
+    var no = function(){ flash(statusEl, "Copy was blocked here. Select the text and copy it manually."); };
     try{
       if(navigator.clipboard && navigator.clipboard.writeText){
-        navigator.clipboard.writeText(text).then(done)["catch"](fail);
-      } else { fail(); }
-    }catch(e){ fail(); }
+        navigator.clipboard.writeText(text).then(ok)["catch"](no);
+      } else { no(); }
+    }catch(e){ no(); }
   }
 
   var addrBtn = document.getElementById("copyAddr");
   if(addrBtn){
     addrBtn.addEventListener("click", function(){
-      copyText(TO, document.querySelector("#contact .status"), "Address copied.");
+      copyText(TO, document.getElementById("asideStatus"), "Address copied.");
     });
   }
 
-  var form = document.getElementById("contactForm");
-  var errEl = document.getElementById("formErr");
-  var ready = document.getElementById("ready");
-  var composed = document.getElementById("composed");
-  var mailLink = document.getElementById("mailLink");
+  var form       = document.getElementById("contactForm");
+  var fields     = document.getElementById("formFields");
+  var actions    = document.getElementById("formActions");
+  var errEl      = document.getElementById("formErr");
+  var sendBtn    = document.getElementById("sendBtn");
+  var sentBox    = document.getElementById("sent");
+  var fallback   = document.getElementById("fallback");
+  var composed   = document.getElementById("composed");
+  var mailLink   = document.getElementById("mailLink");
   var copyStatus = document.getElementById("copyStatus");
 
   function val(id){ var el = document.getElementById(id); return el ? el.value.trim() : ""; }
+
+  function showFallback(subject, body){
+    composed.value = "To: " + TO + "\nSubject: " + subject + "\n\n" + body;
+    mailLink.href  = "mailto:" + TO + "?subject=" + encodeURIComponent(subject) +
+                     "&body=" + encodeURIComponent(body);
+    fallback.hidden = false;
+    fallback.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }
 
   form.addEventListener("submit", function(e){
     e.preventDefault();
@@ -745,18 +774,44 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
       errEl.hidden = false; return;
     }
     errEl.hidden = true;
+    fallback.hidden = true;
 
     var subject = "Concentr8 — " + topic;
     var body = msg + "\n\n—\n" + name + "\n" + email;
-    composed.value = "To: " + TO + "\nSubject: " + subject + "\n\n" + body;
-    mailLink.href = "mailto:" + TO + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
-    ready.hidden = false;
-    ready.scrollIntoView({ behavior: "smooth", block: "nearest" });
+
+    // No endpoint configured yet: hand the message over honestly.
+    if(!FORM_ENDPOINT){ showFallback(subject, body); return; }
+
+    sendBtn.disabled = true;
+    sendBtn.textContent = "Sending…";
+
+    fetch(FORM_ENDPOINT, {
+      method: "POST",
+      headers: { "Accept": "application/json", "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: name, email: email, topic: topic, message: msg,
+        _subject: subject
+      })
+    }).then(function(r){
+      if(!r.ok) throw new Error("rejected");
+      form.reset();
+      if(fields)  fields.hidden  = true;
+      if(actions) actions.hidden = true;
+      sentBox.hidden = false;
+      sentBox.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    })["catch"](function(){
+      sendBtn.disabled = false;
+      sendBtn.textContent = "Send message";
+      errEl.textContent = "That didn't go through. Send it from your mail app instead.";
+      errEl.hidden = false;
+      showFallback(subject, body);
+    });
   });
 
   document.getElementById("copyMsg").addEventListener("click", function(){
     copyText(composed.value, copyStatus, "Copied. Paste it into an email to " + TO + ".");
   });
+
 })();
 </script>
 </body>
