@@ -99,11 +99,11 @@ ol,ul{margin:0; padding:0; list-style:none}
   -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat;
 }
 .mk{
-  aspect-ratio:1181/623;
+  aspect-ratio:1180/621;
   -webkit-mask-image:url(logo-lockup-white.png); mask-image:url(logo-lockup-white.png);
 }
 .wd{
-  aspect-ratio:2158/707;
+  aspect-ratio:1720/284;
   -webkit-mask-image:url(logo-word-white.png); mask-image:url(logo-word-white.png);
 }
 
@@ -116,7 +116,7 @@ ol,ul{margin:0; padding:0; list-style:none}
 .head-in{display:flex; align-items:center; gap:18px; min-height:64px; color:var(--fg)}
 .brand{display:flex; align-items:center; gap:13px; text-decoration:none; margin-right:auto}
 .brand .mk{width:30px}
-.brand .wd{width:122px}
+.brand .wd{width:98px}
 .nav{display:flex; align-items:center; gap:2px}
 .nav a{
   font-family:var(--label); font-weight:400; font-size:.74rem;
@@ -145,10 +145,10 @@ ol,ul{margin:0; padding:0; list-style:none}
   font-weight:800; font-size:clamp(2.4rem,8vw,6rem); line-height:.95;
   letter-spacing:-.045em; color:var(--fg);
 }
-.hero-mark{width:clamp(66px,8vw,104px); color:var(--fg)}
+.hero-mark{width:clamp(84px,10.5vw,138px); color:var(--fg)}
 /* the mark's artwork is flush left; these two get a nudge so the M and the E
    land on the same vertical as it. Script below replaces it with a measured value. */
-.hero-copy h1,.hero-copy .tagline{margin-left:-.035em}
+.hero-copy h1,.hero-copy .tagline,.foot .foot-line{margin-left:-.035em}
 
 .hero-note{padding-block:clamp(28px,4.2vw,54px)}
 .hero-note .wrap{display:grid; gap:20px}
@@ -163,7 +163,7 @@ ol,ul{margin:0; padding:0; list-style:none}
   font-size:clamp(1rem,1.4vw,1.1rem);
 }
 
-.specs{display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--rule-2)}
+.specs{display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--rule-2)}
 .specs div{padding:20px 4px 22px}
 .specs dt{
   font-family:var(--display); font-weight:700; font-size:clamp(1.4rem,3.4vw,2rem);
@@ -217,6 +217,12 @@ ol,ul{margin:0; padding:0; list-style:none}
   font-family:var(--display); font-weight:700; font-size:clamp(1.15rem,3vw,2rem);
   line-height:1.08; letter-spacing:-.03em; color:var(--fg); max-width:19ch;
 }
+.vision{
+  display:grid; gap:2px; max-width:40ch; margin-top:6px;
+  font-family:var(--display); font-weight:300; color:var(--fg-2);
+  font-size:clamp(1.15rem,2.3vw,1.8rem); line-height:1.26; letter-spacing:-.028em;
+}
+.vision .vision-last{color:var(--fg); font-weight:700}
 .duo{display:grid; gap:clamp(12px,1.8vw,22px); grid-template-columns:1fr 1fr}
 .duo .plate img{aspect-ratio:4/5; object-position:center}
 
@@ -260,10 +266,18 @@ ol,ul{margin:0; padding:0; list-style:none}
   border:1px solid var(--rule); color:var(--fg-2);
 }
 .ing-tags b.on{border-color:var(--fg); color:var(--fg)}
-.key{
-  display:flex; flex-wrap:wrap; gap:6px 26px; margin-bottom:16px;
+.key{display:flex; flex-wrap:wrap; gap:10px 24px; margin-bottom:18px}
+.key span{
+  display:flex; align-items:center; gap:9px;
   font-family:var(--label); font-weight:400; font-size:.64rem;
   letter-spacing:.2em; text-transform:uppercase; color:var(--fg-2);
+}
+.key-note{margin-left:auto}
+.key-note b{display:none}
+.key b{
+  flex:none; width:22px; height:22px; display:grid; place-items:center;
+  border-radius:999px; border:1px solid var(--fg); color:var(--fg);
+  font-weight:500; font-size:.6rem; letter-spacing:0;
 }
 .rec-close{
   display:grid; gap:20px clamp(24px,4vw,60px); grid-template-columns:1.1fr 1fr;
@@ -327,7 +341,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
 /* ---------- footer ---------- */
 .foot{border-top:1px solid var(--rule); padding-block:clamp(36px,4.5vw,58px); color:var(--fg)}
 .foot-top{display:flex; flex-wrap:wrap; gap:26px; align-items:flex-start; justify-content:space-between}
-.foot .wd{width:188px}
+.foot .wd{width:150px}
 .foot-nav{display:flex; flex-wrap:wrap; gap:20px}
 .foot-nav a{
   font-family:var(--label); font-weight:400; font-size:.68rem; letter-spacing:.22em;
@@ -359,10 +373,9 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
 @media (max-width:760px){
   .products{grid-template-columns:1fr; gap:34px}
   .duo{grid-template-columns:1fr}
-  .specs{grid-template-columns:1fr 1fr}
-  .specs div{border-top:1px solid var(--rule)}
+  .specs dd{letter-spacing:.14em; font-size:.6rem}
   .nav a:not(.cta){padding:10px 7px; font-size:.66rem; letter-spacing:.14em}
-  .brand .wd{width:104px}
+  .brand .wd{width:84px}
   .row{grid-template-columns:1fr}
   .hero-plate img{aspect-ratio:4/5; object-position:center 44%}
   .plate img[style*="16/9"]{aspect-ratio:4/3 !important}
@@ -407,14 +420,13 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
 
   <div class="hero-note">
     <div class="wrap">
-      <p class="note">Built for the hours that actually matter: revision, deep work, the second half of a long day. Eight actives, dosed openly, nothing to crash from.</p>
+      <p class="note">Built for the hours that actually matter.<br>Revision, deep work, the second half of a long day.</p>
     </div>
   </div>
 
   <div class="wrap">
     <dl class="specs">
-      <div><dt>44 mg</dt><dd>Natural caffeine</dd></div>
-      <div><dt>1000 mg</dt><dd>Taurine</dd></div>
+      <div><dt>140 mg</dt><dd>Natural caffeine</dd></div>
       <div><dt>8</dt><dd>Actives</dd></div>
       <div><dt>250 ml</dt><dd>Low sugar</dd></div>
     </dl>
@@ -439,12 +451,15 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
   <!-- PRODUCTS -->
   <section class="band" id="products">
     <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">01 — The product</p>
+      </div>
       <div class="products">
         <article class="prod">
           <div class="shot"><img src="pair-peach.webp" alt="Peach Hibiscus can, front and back" width="1431" height="1789" loading="lazy"></div>
           <div class="prod-body">
             <h3>Peach Hibiscus</h3>
-            <p class="note">Ripe peach with a tart hibiscus edge. The closest thing in the range to an iced tea with the sugar taken out.</p>
+            <p class="note">Peach Hibiscus, a sweet combo with low sugar.</p>
             <p class="facts"><span>250 ml</span><span>8 actives</span><span>Low sugar</span></p>
           </div>
         </article>
@@ -453,7 +468,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
           <div class="shot"><img src="pair-apple.webp" alt="Apple Elderflower can, front and back" width="1431" height="1789" loading="lazy"></div>
           <div class="prod-body">
             <h3>Apple Elderflower</h3>
-            <p class="note">Crisp and dry. Green apple first, elderflower underneath it, finishing closer to a cider than a soft drink. The one most people start with.</p>
+            <p class="note">Apple Elderflower, for a fresh sip of nature.</p>
             <p class="facts"><span>250 ml</span><span>8 actives</span><span>Low sugar</span></p>
           </div>
         </article>
@@ -462,7 +477,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
           <div class="shot"><img src="pair-passion.webp" alt="Passion-fruit Ylang-Ylang can, front and back" width="1431" height="1789" loading="lazy"></div>
           <div class="prod-body">
             <h3>Passion-fruit Ylang-Ylang</h3>
-            <p class="note">Sharp tropical passion-fruit with ylang-ylang behind it, floral and faintly creamy. The boldest of the three.</p>
+            <p class="note">Passion-Fruit Ylang-Ylang, the tropical note of the day.</p>
             <p class="facts"><span>250 ml</span><span>8 actives</span><span>Low sugar</span></p>
           </div>
         </article>
@@ -482,22 +497,23 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
       <div class="sec-head">
         <p class="eyebrow">02 — The recipe</p>
         <h2 class="h2">8 Actives</h2>
-        <p class="lede">Everything that is in the can, at the dose it is in the can. Per 250 ml.</p>
+        <p class="lede">The perfect mix to unlock your productivity.</p>
       </div>
 
       <div class="key">
-        <span>E — Energy</span>
-        <span>F — Focus</span>
-        <span>C — Cognition</span>
+        <span><b>E</b>Energy</span>
+        <span><b>F</b>Focus</span>
+        <span><b>M</b>Mind</span>
+        <span class="key-note">Per 250 ml</span>
       </div>
       <ol class="ings">
         <li class="ing">
           <span class="ing-no">01</span>
           <span class="ing-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M13.6 2.4 6 13.6h4.6L9.9 21.6 18 10.2h-4.7z"/></svg></span>
           <h3 class="ing-name">Natural caffeine</h3>
-          <span class="ing-dose">44<i>mg</i></span>
-          <p class="ing-line">From 200 mg guarana extract, standardised to 22%.</p>
-          <span class="ing-tags"><b class="on">E</b><b class="on">F</b><b class="on">C</b></span>
+          <span class="ing-dose">140<i>mg</i></span>
+          <p class="ing-line">From guarana, standardised to 22% caffeine.</p>
+          <span class="ing-tags"><b class="on">E</b><b class="on">F</b><b class="on">M</b></span>
         </li>
         <li class="ing">
           <span class="ing-no">02</span>
@@ -505,7 +521,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
           <h3 class="ing-name">Taurine</h3>
           <span class="ing-dose">1000<i>mg</i></span>
           <p class="ing-line">An amino acid that supports nerve signalling.</p>
-          <span class="ing-tags"><b class="on">E</b><b class="on">F</b><b>C</b></span>
+          <span class="ing-tags"><b class="on">E</b><b>F</b><b class="on">M</b></span>
         </li>
         <li class="ing">
           <span class="ing-no">03</span>
@@ -513,7 +529,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
           <h3 class="ing-name">Green tea extract</h3>
           <span class="ing-dose">250<i>mg</i></span>
           <p class="ing-line">Standardised EGCG, to soften the lift.</p>
-          <span class="ing-tags"><b>E</b><b class="on">F</b><b class="on">C</b></span>
+          <span class="ing-tags"><b>E</b><b class="on">F</b><b class="on">M</b></span>
         </li>
         <li class="ing">
           <span class="ing-no">04</span>
@@ -521,7 +537,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
           <h3 class="ing-name">Vitamin B complex</h3>
           <span class="ing-dose">13<i>mg</i></span>
           <p class="ing-line">B2 through B12. Turns what you ate into energy.</p>
-          <span class="ing-tags"><b class="on">E</b><b>F</b><b class="on">C</b></span>
+          <span class="ing-tags"><b class="on">E</b><b class="on">F</b><b class="on">M</b></span>
         </li>
         <li class="ing">
           <span class="ing-no">05</span>
@@ -529,7 +545,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
           <h3 class="ing-name">Vitamin C</h3>
           <span class="ing-dose">40<i>mg</i></span>
           <p class="ing-line">Ascorbic acid. Keeps tiredness from creeping in.</p>
-          <span class="ing-tags"><b class="on">E</b><b>F</b><b class="on">C</b></span>
+          <span class="ing-tags"><b class="on">E</b><b>F</b><b class="on">M</b></span>
         </li>
         <li class="ing">
           <span class="ing-no">06</span>
@@ -537,7 +553,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
           <h3 class="ing-name">Ginger extract</h3>
           <span class="ing-dose">100<i>mg</i></span>
           <p class="ing-line">5% gingerols. Keeps it easy on an empty stomach.</p>
-          <span class="ing-tags"><b class="on">E</b><b>F</b><b>C</b></span>
+          <span class="ing-tags"><b class="on">E</b><b class="on">F</b><b>M</b></span>
         </li>
         <li class="ing">
           <span class="ing-no">07</span>
@@ -545,7 +561,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
           <h3 class="ing-name">Panax ginseng</h3>
           <span class="ing-dose">200<i>mg</i></span>
           <p class="ing-line">4% ginsenosides, for when the effort drags.</p>
-          <span class="ing-tags"><b class="on">E</b><b>F</b><b class="on">C</b></span>
+          <span class="ing-tags"><b class="on">E</b><b>F</b><b class="on">M</b></span>
         </li>
         <li class="ing">
           <span class="ing-no">08</span>
@@ -553,30 +569,34 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
           <h3 class="ing-name">Electrolyte blend</h3>
           <span class="ing-dose">1400<i>mg</i></span>
           <p class="ing-line">Magnesium, sodium, potassium and calcium.</p>
-          <span class="ing-tags"><b class="on">E</b><b>F</b><b>C</b></span>
+          <span class="ing-tags"><b class="on">E</b><b class="on">F</b><b class="on">M</b></span>
         </li>
       </ol>
 
       <div class="rec-close">
         <p class="big">Caffeine alone spikes, then drops. Natural caffeine holds.</p>
-        <p class="rec-note">The other seven earn their place the same way the can earns its look: nothing is on there that isn't doing something. Green tea softens the lift, the vitamins and salts stop it thinning out, and ginseng is in for the third hour rather than the first twenty minutes.</p>
+        <p class="rec-note">The other seven earn their place the same way the can earns its look. Nothing is on there that isn't doing something. Green tea softens the lift, the vitamins and salts stop it thinning out, and ginseng is in for the third hour rather than the first twenty minutes.</p>
       </div>
 
       <p class="rec-foot">High caffeine content. Not recommended for children or for pregnant or breastfeeding women. Concentr8 is a food, not a medicine, and the recipe itself stays protected.</p>
     </div>
   </section>
 
-  <!-- IDEA -->
+  <!-- VISION -->
   <section class="band" style="padding-bottom:0">
     <div class="wrap">
       <div class="sec-head">
-        <p class="eyebrow">03 — The idea</p>
+        <p class="eyebrow">03 — The vision</p>
         <h2 class="h2">For people who stay with it</h2>
+        <div class="vision">
+          <p>Eight actives, one goal.</p>
+          <p class="vision-last">Drink it, make it happen.</p>
+        </div>
       </div>
     </div>
     <div class="duo">
       <div class="plate"><img src="rug.webp" alt="Two people on a rug marked with the Concentr8 logo" width="1759" height="2196" loading="lazy"></div>
-      <div class="plate"><img src="tiger.webp" alt="A tiger drinking at a pool, the Concentr8 mark reflected in the water" width="1738" height="2165" loading="lazy"></div>
+      <div class="plate"><img src="poster-eyes.webp" alt="Concentr8 poster: a figure walking across a repeated close-up of an eye" width="1683" height="2103" loading="lazy"></div>
     </div>
   </section>
 
@@ -663,7 +683,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
     <div class="foot-top">
       <div>
         <span class="wd" role="img" aria-label="Concentr8"></span>
-        <p class="eyebrow" style="margin-top:18px">Make it happen.</p>
+        <p class="eyebrow foot-line" style="margin-top:16px">Make it happen.</p>
       </div>
       <nav class="foot-nav" aria-label="Footer">
         <a href="#products">Products</a>
@@ -681,8 +701,8 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
 
 <script>
 (function(){
-  // Optically align the hero mark, the M of "Make" and the E of "Energy" on one
-  // vertical: shift each line left by its first glyph's own side bearing.
+  // Optically align the logo marks with the type beneath them, in the hero and
+  // the footer: shift each line left by its first glyph's own side bearing.
   function nudge(el){
     try{
       var cs = getComputedStyle(el);
@@ -695,14 +715,14 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
       el.style.marginLeft = m.actualBoundingBoxLeft.toFixed(2) + "px";
     }catch(e){}
   }
-  function alignHero(){
-    var els = document.querySelectorAll(".hero-copy h1, .hero-copy .tagline");
+  function alignMarks(){
+    var els = document.querySelectorAll(".hero-copy h1, .hero-copy .tagline, .foot .foot-line");
     for(var i = 0; i < els.length; i++) nudge(els[i]);
   }
-  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(alignHero); }
-  else { alignHero(); }
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(alignMarks); }
+  else { alignMarks(); }
   var rt;
-  addEventListener("resize", function(){ clearTimeout(rt); rt = setTimeout(alignHero, 150); });
+  addEventListener("resize", function(){ clearTimeout(rt); rt = setTimeout(alignMarks, 150); });
 
   // ── Contact form ──────────────────────────────────────────────────────
   // Where messages go, and the address shown on the page.
@@ -714,7 +734,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
   // While this is empty the form still works: it writes the message out and
   // the visitor sends it from their own mail app. It never claims to have
   // sent something it did not send.
-  var FORM_ENDPOINT = "";
+  var FORM_ENDPOINT = "https://formspree.io/f/myeeobnr";
 
   function flash(el, msg){
     if(!el) return;
@@ -790,7 +810,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
       headers: { "Accept": "application/json", "Content-Type": "application/json" },
       body: JSON.stringify({
         name: name, email: email, topic: topic, message: msg,
-        _subject: subject
+        _subject: subject, _replyto: email
       })
     }).then(function(r){
       if(!r.ok) throw new Error("rejected");
