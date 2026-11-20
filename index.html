@@ -266,13 +266,33 @@ ol,ul{margin:0; padding:0; list-style:none}
   border:1px solid var(--rule); color:var(--fg-2);
 }
 .ing-tags b.on{border-color:var(--fg); color:var(--fg)}
-.key{display:flex; flex-wrap:wrap; gap:10px 24px; margin-bottom:18px}
+.key{
+  display:grid; align-items:end; gap:4px 22px; padding:0 6px; margin-bottom:12px;
+  grid-template-columns:50px 32px minmax(130px,1.05fr) 112px minmax(158px,1.35fr) 76px;
+}
+.key-legend{grid-row:1; grid-column:5 / 7; justify-self:end; gap:16px !important; white-space:nowrap}
+.key-note{grid-row:1; grid-column:4; white-space:nowrap}
+.efm{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:18px clamp(20px,3vw,44px);
+  margin:0 0 clamp(28px,4vw,44px); padding:0 6px;
+}
+.efm dt{
+  display:flex; align-items:center; gap:10px;
+  font-family:var(--label); font-weight:400; font-size:.74rem;
+  letter-spacing:.2em; text-transform:uppercase; color:var(--fg);
+}
+.efm dt b{
+  flex:none; width:22px; height:22px; display:grid; place-items:center;
+  border-radius:999px; border:1px solid var(--fg);
+  font-weight:500; font-size:.6rem; letter-spacing:0;
+}
+.efm dd{margin:9px 0 0; color:var(--fg-2); font-size:.94rem; font-weight:300; line-height:1.5; max-width:34ch}
+@media (max-width:760px){.efm{grid-template-columns:1fr; gap:16px; padding:0 2px}}
 .key span{
   display:flex; align-items:center; gap:9px;
   font-family:var(--label); font-weight:400; font-size:.64rem;
   letter-spacing:.2em; text-transform:uppercase; color:var(--fg-2);
 }
-.key-note{margin-left:auto}
 .key-note b{display:none}
 .key b{
   flex:none; width:22px; height:22px; display:grid; place-items:center;
@@ -290,6 +310,65 @@ ol,ul{margin:0; padding:0; list-style:none}
 }
 .rec-note{color:var(--fg-2); font-size:.96rem; font-weight:300; max-width:52ch}
 .rec-foot{margin-top:26px; font-size:.78rem; color:var(--fg-2); font-weight:300; max-width:70ch}
+
+/* ---------- data sheets ---------- */
+.ing[data-ing]{cursor:pointer}
+.ing[data-ing]:focus-visible{outline:2px solid var(--hi); outline-offset:-2px}
+.ings-hint{margin:14px 6px 0; font-family:var(--label); font-size:.68rem; letter-spacing:.2em; text-transform:uppercase; color:var(--fg-2)}
+dialog.sheet{
+  width:min(900px,calc(100vw - 24px)); max-width:none; max-height:min(92vh,calc(100dvh - 24px));
+  padding:0; border:1px solid var(--rule-2); border-radius:6px; background:var(--ground); color:var(--fg);
+}
+dialog.sheet[open]{display:flex; flex-direction:column}
+dialog.sheet::backdrop{background:rgba(0,0,0,.72); backdrop-filter:blur(4px)}
+.sh-head{
+  display:grid; grid-template-columns:1fr auto; gap:6px 20px; align-items:start;
+  padding:clamp(18px,3vw,28px) clamp(18px,3.4vw,34px) 18px; border-bottom:1px solid var(--rule-2); background:var(--surface);
+}
+.sh-id{font-family:var(--label); font-size:.66rem; letter-spacing:.24em; text-transform:uppercase; color:var(--fg-2)}
+.sh-head h2{font-weight:800; font-size:clamp(1.5rem,4vw,2.3rem); line-height:1.02; letter-spacing:-.035em; margin-top:8px}
+.sh-sci{margin-top:8px; font-style:italic; font-weight:300; color:var(--fg-2); font-size:.95rem}
+.sh-close{
+  font-family:var(--label); font-size:.68rem; letter-spacing:.2em; text-transform:uppercase; cursor:pointer;
+  background:none; color:var(--fg); border:1px solid var(--rule-2); border-radius:999px; padding:9px 16px;
+}
+.sh-close:hover{background:var(--fg); color:var(--ground)}
+.sh-body{overflow:auto; padding:0 clamp(18px,3.4vw,34px) clamp(22px,3vw,32px); overscroll-behavior:contain}
+.sh-top{display:grid; grid-template-columns:auto 1fr; gap:10px clamp(20px,4vw,48px); align-items:end; padding:22px 0; border-bottom:1px solid var(--rule)}
+.sh-dose{font-family:var(--display); font-weight:700; font-size:clamp(2rem,6vw,3.2rem); line-height:.95; letter-spacing:-.04em; font-variant-numeric:tabular-nums; white-space:nowrap}
+.sh-dose small{display:block; margin-top:8px; font-family:var(--label); font-weight:400; font-size:.62rem; letter-spacing:.22em; text-transform:uppercase; color:var(--fg-2)}
+.sh-grade{justify-self:end; text-align:right; font-family:var(--label); font-size:.62rem; letter-spacing:.22em; text-transform:uppercase; color:var(--fg-2)}
+.sh-grade b{display:block; margin-top:6px; font-family:var(--display); font-weight:700; font-size:1.05rem; letter-spacing:-.01em; text-transform:none; color:var(--fg)}
+.sh-sec{padding-top:24px}
+.sh-sec h3{font-family:var(--label); font-weight:500; font-size:.68rem; letter-spacing:.24em; text-transform:uppercase; color:var(--fg-2); margin-bottom:10px}
+.sh-sec p,.sh-sec li{font-size:.97rem; font-weight:300; line-height:1.6; color:var(--fg)}
+.sh-sec ul{display:grid; gap:7px}
+.sh-sec ul li{padding-left:16px; position:relative}
+.sh-sec ul li::before{content:""; position:absolute; left:0; top:.72em; width:6px; height:1px; background:var(--fg-2)}
+.sh-spec{display:grid; grid-template-columns:minmax(120px,190px) 1fr; border-top:1px solid var(--rule)}
+.sh-spec dt,.sh-spec dd{margin:0; padding:9px 0; border-bottom:1px solid var(--rule); font-size:.92rem; line-height:1.5}
+.sh-spec dt{font-family:var(--label); font-size:.64rem; letter-spacing:.2em; text-transform:uppercase; color:var(--fg-2); padding-top:12px; padding-right:14px}
+.sh-spec dd{font-weight:300; font-variant-numeric:tabular-nums}
+.sh-tbl{width:100%; border-collapse:collapse; font-size:.88rem; line-height:1.5}
+.sh-tbl th{font-family:var(--label); font-weight:500; font-size:.6rem; letter-spacing:.2em; text-transform:uppercase; color:var(--fg-2); text-align:left; padding:0 14px 8px 0; border-bottom:1px solid var(--rule-2); white-space:nowrap}
+.sh-tbl td{vertical-align:top; padding:11px 14px 11px 0; border-bottom:1px solid var(--rule); font-weight:300}
+.sh-tbl td:first-child{font-weight:500; white-space:nowrap}
+.sh-tbl td:nth-child(3){font-variant-numeric:tabular-nums}
+.sh-tbl tr > :last-child{padding-right:0}
+.sh-refs{counter-reset:r; display:grid; gap:8px}
+.sh-refs li{counter-increment:r; padding-left:34px; position:relative; font-size:.84rem !important; color:var(--fg-2) !important}
+.sh-refs li::before{content:"[" counter(r) "]"; position:absolute; left:0; top:0; font-variant-numeric:tabular-nums; color:var(--fg)}
+.sh-note{margin-top:26px; padding-top:16px; border-top:1px solid var(--rule-2); font-size:.78rem; font-weight:300; color:var(--fg-2); line-height:1.55}
+@media (max-width:700px){
+  .sh-spec{grid-template-columns:1fr}
+  .sh-spec dt{border-bottom:0; padding-bottom:0}
+  .sh-spec dd{padding-top:3px}
+  .sh-tbl thead{display:none}
+  .sh-tbl,.sh-tbl tbody,.sh-tbl tr,.sh-tbl td{display:block; width:100%}
+  .sh-tbl tr{padding:12px 0; border-bottom:1px solid var(--rule)}
+  .sh-tbl td{border:0; padding:2px 0; white-space:normal !important}
+  .sh-tbl td[data-l]::before{content:attr(data-l) " "; font-family:var(--label); font-size:.58rem; letter-spacing:.2em; text-transform:uppercase; color:var(--fg-2); margin-right:6px}
+}
 
 /* ---------- contact ---------- */
 .contact-grid{display:grid; gap:clamp(28px,4vw,60px); grid-template-columns:.85fr 1.15fr; align-items:start}
@@ -363,6 +442,9 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
     grid-template-areas:"no name dose" "no line line" "no tags ico";
   }
   .ing:hover{padding-left:2px}
+  .key{grid-template-columns:44px 1fr auto; gap:8px 14px; padding:0 2px}
+  .key-legend{grid-column:2; justify-self:start; flex-wrap:wrap; gap:6px 12px !important; white-space:normal}
+  .key-note{grid-column:3; justify-self:end}
   .ing-no{grid-area:no; align-self:start}
   .ing-ico{grid-area:ico; justify-content:flex-end; align-self:center}
   .ing-name{grid-area:name}
@@ -497,17 +579,21 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
       <div class="sec-head">
         <p class="eyebrow">02 — The recipe</p>
         <h2 class="h2">8 Actives</h2>
-        <p class="lede">The perfect mix to unlock your productivity.</p>
+        <p class="lede">The perfect mix to unlock the factors of productivity.</p>
       </div>
 
+      <dl class="efm">
+        <div><dt><b>E</b>Energy</dt><dd>The ability to stay present in the moment.</dd></div>
+        <div><dt><b>F</b>Focus</dt><dd>The ability to hold your attention on a task.</dd></div>
+        <div><dt><b>M</b>Mind</dt><dd>The ability to use optimal brain power.</dd></div>
+      </dl>
+
       <div class="key">
-        <span><b>E</b>Energy</span>
-        <span><b>F</b>Focus</span>
-        <span><b>M</b>Mind</span>
+        <span class="key-legend"><span><b>E</b>Energy</span><span><b>F</b>Focus</span><span><b>M</b>Mind</span></span>
         <span class="key-note">Per 250 ml</span>
       </div>
       <ol class="ings">
-        <li class="ing">
+        <li class="ing" data-ing="caffeine" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Natural caffeine, 140 mg. Open the data sheet.">
           <span class="ing-no">01</span>
           <span class="ing-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M13.6 2.4 6 13.6h4.6L9.9 21.6 18 10.2h-4.7z"/></svg></span>
           <h3 class="ing-name">Natural caffeine</h3>
@@ -515,7 +601,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
           <p class="ing-line">From guarana, standardised to 22% caffeine.</p>
           <span class="ing-tags"><b class="on">E</b><b class="on">F</b><b class="on">M</b></span>
         </li>
-        <li class="ing">
+        <li class="ing" data-ing="taurine" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Taurine, 1000 mg. Open the data sheet.">
           <span class="ing-no">02</span>
           <span class="ing-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.6" cy="8.2" r="2.3"/><circle cx="12" cy="13.2" r="2.3"/><circle cx="18.4" cy="7.4" r="2.3"/><path d="M7.4 9.6 10.2 11.8M13.9 11.8 16.6 9"/></svg></span>
           <h3 class="ing-name">Taurine</h3>
@@ -523,59 +609,60 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
           <p class="ing-line">An amino acid that supports nerve signalling.</p>
           <span class="ing-tags"><b class="on">E</b><b>F</b><b class="on">M</b></span>
         </li>
-        <li class="ing">
+        <li class="ing" data-ing="theanine" tabindex="0" role="button" aria-haspopup="dialog" aria-label="L-theanine, 250 mg. Open the data sheet.">
           <span class="ing-no">03</span>
           <span class="ing-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20.4 3.6c0 9-5.6 14.2-11.2 14.2a5.6 5.6 0 0 1 0-11.2c5.6 0 11.2-1 11.2-3z"/><path d="M3.6 21c3.2-6.4 7.4-9.6 12.6-11.6"/></svg></span>
-          <h3 class="ing-name">Green tea extract</h3>
+          <h3 class="ing-name">L-theanine</h3>
           <span class="ing-dose">250<i>mg</i></span>
-          <p class="ing-line">Standardised EGCG, to soften the lift.</p>
+          <p class="ing-line">From green tea extract, 60% L-theanine. Softens the lift.</p>
           <span class="ing-tags"><b>E</b><b class="on">F</b><b class="on">M</b></span>
         </li>
-        <li class="ing">
+        <li class="ing" data-ing="vitamins" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Vitamin Blend (B+C+D), 614 mg. Open the data sheet.">
           <span class="ing-no">04</span>
           <span class="ing-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.6 20.1 7.3v9.4L12 21.4 3.9 16.7V7.3z"/><circle cx="12" cy="12" r="2.7"/></svg></span>
-          <h3 class="ing-name">Vitamin B complex</h3>
-          <span class="ing-dose">13<i>mg</i></span>
-          <p class="ing-line">B2 through B12. Turns what you ate into energy.</p>
+          <h3 class="ing-name">Vitamin Blend (B+C+D)</h3>
+          <span class="ing-dose">614<i>mg</i></span>
+          <p class="ing-line">All eight B vitamins, C and D3. Turns what you ate into energy.</p>
           <span class="ing-tags"><b class="on">E</b><b class="on">F</b><b class="on">M</b></span>
         </li>
-        <li class="ing">
+        <li class="ing" data-ing="ginger" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Ginger extract, 400 mg. Open the data sheet.">
           <span class="ing-no">05</span>
-          <span class="ing-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3.6v16.8M3.6 12h16.8M6.1 6.1l11.8 11.8M17.9 6.1 6.1 17.9"/></svg></span>
-          <h3 class="ing-name">Vitamin C</h3>
-          <span class="ing-dose">40<i>mg</i></span>
-          <p class="ing-line">Ascorbic acid. Keeps tiredness from creeping in.</p>
-          <span class="ing-tags"><b class="on">E</b><b>F</b><b class="on">M</b></span>
-        </li>
-        <li class="ing">
-          <span class="ing-no">06</span>
           <span class="ing-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14.8 3.4c-3.2 1.1-4.8 3.6-4.8 6.4 0 1.5.5 2.7.5 3.9 0 2.3-1.6 3.9-1.6 6.3"/><path d="M10 9.9C7.9 8.7 5.9 8.9 4.3 10.4"/><path d="M10.4 15.2c2-1.3 4.1-1.3 6 0"/></svg></span>
           <h3 class="ing-name">Ginger extract</h3>
-          <span class="ing-dose">100<i>mg</i></span>
+          <span class="ing-dose">400<i>mg</i></span>
           <p class="ing-line">5% gingerols. Keeps it easy on an empty stomach.</p>
           <span class="ing-tags"><b class="on">E</b><b class="on">F</b><b>M</b></span>
         </li>
-        <li class="ing">
-          <span class="ing-no">07</span>
+        <li class="ing" data-ing="ginseng" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Panax ginseng, 200 mg. Open the data sheet.">
+          <span class="ing-no">06</span>
           <span class="ing-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.4V8.6"/><path d="M12 8.6c0-3.3 2.5-5.6 5.6-5.6 0 3.3-2.5 5.6-5.6 5.6z"/><path d="M12 13.2c0-2.7-2.1-4.6-4.6-4.6 0 2.7 2.1 4.6 4.6 4.6z"/></svg></span>
           <h3 class="ing-name">Panax ginseng</h3>
           <span class="ing-dose">200<i>mg</i></span>
           <p class="ing-line">4% ginsenosides, for when the effort drags.</p>
           <span class="ing-tags"><b class="on">E</b><b>F</b><b class="on">M</b></span>
         </li>
-        <li class="ing">
-          <span class="ing-no">08</span>
+        <li class="ing" data-ing="magnesium" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Magnesium, 250 mg. Open the data sheet.">
+          <span class="ing-no">07</span>
           <span class="ing-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.8c3.9 4.2 6 7.6 6 10.4a6 6 0 0 1-12 0c0-2.8 2.1-6.2 6-10.4z"/><path d="M12 10.6v5M9.5 13.1h5"/></svg></span>
-          <h3 class="ing-name">Electrolyte blend</h3>
-          <span class="ing-dose">1400<i>mg</i></span>
-          <p class="ing-line">Magnesium, sodium, potassium and calcium.</p>
+          <h3 class="ing-name">Magnesium</h3>
+          <span class="ing-dose">250<i>mg</i></span>
+          <p class="ing-line">As citrate. Steadies the nervous system under pressure.</p>
           <span class="ing-tags"><b class="on">E</b><b class="on">F</b><b class="on">M</b></span>
         </li>
+        <li class="ing" data-ing="lionsmane" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Lion's Mane, 150 mg. Open the data sheet.">
+          <span class="ing-no">08</span>
+          <span class="ing-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4.8 10.6a7.2 7.2 0 0 1 14.4 0c0 1.1-.8 1.8-1.9 1.8H6.7c-1.1 0-1.9-.7-1.9-1.8z"/><path d="M7.6 12.4v3.4M10.5 12.4v5.6M13.5 12.4v5.6M16.4 12.4v3.4"/></svg></span>
+          <h3 class="ing-name">Lion's Mane</h3>
+          <span class="ing-dose">150<i>mg</i></span>
+          <p class="ing-line">The smart mushroom. Clears mental clutter so you think faster, with no extra buzz.</p>
+          <span class="ing-tags"><b>E</b><b class="on">F</b><b class="on">M</b></span>
+        </li>
       </ol>
+      <p class="ings-hint">Select an active to open its data sheet.</p>
 
       <div class="rec-close">
         <p class="big">Caffeine alone spikes, then drops. Natural caffeine holds.</p>
-        <p class="rec-note">The other seven earn their place the same way the can earns its look. Nothing is on there that isn't doing something. Green tea softens the lift, the vitamins and salts stop it thinning out, and ginseng is in for the third hour rather than the first twenty minutes.</p>
+        <p class="rec-note">The other seven earn their place the same way the can earns its look. Nothing is on there that isn't doing something. L-theanine softens the lift, the vitamins and magnesium stop it thinning out, lion's mane keeps the thinking clear, and ginseng is in for the third hour rather than the first twenty minutes.</p>
       </div>
 
       <p class="rec-foot">High caffeine content. Not recommended for children or for pregnant or breastfeeding women. Concentr8 is a food, not a medicine, and the recipe itself stays protected.</p>
@@ -677,6 +764,15 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
     </div>
   </section>
 </main>
+
+<dialog class="sheet" id="sheet" aria-labelledby="shName">
+  <div class="sh-head">
+    <div><p class="sh-id" id="shId"></p><h2 id="shName"></h2><p class="sh-sci" id="shSci"></p></div>
+    <button class="sh-close" type="button" id="shClose">Close</button>
+  </div>
+  <div class="sh-body" id="shBody"></div>
+</dialog>
+
 
 <footer class="foot">
   <div class="wrap">
@@ -832,6 +928,59 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
     copyText(composed.value, copyStatus, "Copied. Paste it into an email to " + TO + ".");
   });
 
+})();
+</script>
+<script>
+(function(){
+  // Data sheets: click an active in the recipe to open its research summary.
+  var data = {"order": ["caffeine", "taurine", "theanine", "vitamins", "ginger", "ginseng", "magnesium", "lionsmane"], "sheets": {"caffeine": {"name": "Natural caffeine", "sci": "1,3,7-trimethylxanthine, from Paullinia cupana (guarana) seed", "dose": "140 mg", "grade": "Strong", "spec": [["Class", "Methylxanthine, adenosine receptor antagonist"], ["Form", "Guarana seed extract standardised to 22% caffeine (about 636 mg of extract)"], ["Onset", "15 to 45 min, peak plasma level at about 30 to 60 min"], ["Half-life", "About 3 to 5 h in healthy adults (wide individual range)"], ["Acts on", "Energy · Focus · Mind"]], "summary": "The best documented cognitive active in the can. Caffeine raises alertness and sustained attention, most clearly when the task is long or the person is tired.", "mech": ["Blocks adenosine A1 and A2A receptors, removing the brake that adenosine builds up over waking hours.", "Indirectly increases dopaminergic, noradrenergic and cholinergic signalling in the cortex and striatum.", "Effects are measured on vigilance, reaction time and perceived fatigue rather than on reasoning itself."], "evid": [["Haskell et al., 2008 [1]", "Randomised, double-blind, placebo-controlled crossover", "150 mg, alone and with 250 mg L-theanine", "Caffeine improved attention accuracy and alertness ratings and reduced tiredness."]], "why": "140 mg sits between the 75 mg threshold for the alertness effect recognised by EFSA [2] and the 200 mg single-dose ceiling it assessed [3], and close to the 150 mg used in the trial above.", "safety": "High caffeine content (56 mg per 100 ml). Not recommended for children or for pregnant or breastfeeding women. Doses of 100 mg or more close to bedtime can delay sleep. Count other sources toward the 400 mg daily reference.", "refs": ["Haskell CF, Kennedy DO, Milne AL, Wesnes KA, Scholey AB. The effects of L-theanine, caffeine and their combination on cognition and mood. Biol Psychol 2008;77(2):113-122.", "EFSA NDA Panel. Scientific Opinion on the substantiation of health claims related to caffeine and increased alertness and attention. EFSA Journal 2011;9(4):2054.", "EFSA NDA Panel. Scientific Opinion on the safety of caffeine. EFSA Journal 2015;13(5):4102."]}, "taurine": {"name": "Taurine", "sci": "2-aminoethanesulfonic acid", "dose": "1000 mg", "grade": "Limited", "spec": [["Class", "Sulfur-containing amino acid, inhibitory neuromodulator"], ["Form", "Synthetic taurine, at least 98.5% pure"], ["Onset", "Plasma peak at about 1 to 2.5 h"], ["Role in the brain", "One of the most abundant free amino acids in neural tissue"], ["Acts on", "Energy · Mind"]], "summary": "Taurine is paired with caffeine. In a controlled study the combination kept attention and reaction time steady through a demanding session and improved wellbeing ratings.", "mech": ["Agonist at GABA-A and glycine receptors, which gives it a mild inhibitory, steadying action.", "Regulates cell volume and intracellular calcium, two processes neurons depend on during sustained firing.", "Studied in combination with caffeine, where it accompanies the stimulant effect."], "evid": [["Seidl et al., 2000 [1]", "Double-blind, placebo-controlled, n = 10", "1000 mg with 80 mg caffeine and 600 mg glucuronolactone", "Attention markers (P300 latency) and motor reaction time held steady with the active capsule while they worsened with placebo, and wellbeing ratings were better."]], "why": "1000 mg is the dose used in the study above and the level reviewed by EFSA for 250 ml drinks [2].", "safety": "EFSA reports a no-observed-adverse-effect level of 1000 mg per kg of body weight per day in animal studies, far above this dose.", "refs": ["Seidl R, Peyrl A, Nicham R, Hauser E. A taurine and caffeine-containing drink stimulates cognitive performance and well-being. Amino Acids 2000;19(3-4):635-642.", "EFSA ANS Panel. The use of taurine and D-glucurono-γ-lactone as constituents of the so-called \"energy\" drinks. EFSA Journal 2009;7(2):935."]}, "theanine": {"name": "L-theanine", "sci": "γ-glutamylethylamide, from Camellia sinensis (green tea) leaf", "dose": "250 mg", "grade": "Moderate", "spec": [["Class", "Non-protein amino acid, glutamate analogue"], ["Form", "Green tea extract standardised to 60% L-theanine (about 417 mg of extract)"], ["Onset", "Crosses the blood-brain barrier within about 30 min"], ["EEG signature", "Increased alpha-band activity from 50 mg upward"], ["Acts on", "Focus · Mind"]], "summary": "L-theanine works with caffeine. Together they improved attention accuracy and speed while lowering the mental fatigue that caffeine alone can leave.", "mech": ["Structural analogue of glutamate: binds glutamate receptors and transporters with low affinity, damping excitatory signalling.", "Increases alpha-band oscillations on EEG, a marker of relaxed, attentive wakefulness.", "With caffeine, the combination improves the allocation of attention more than either compound alone."], "evid": [["Haskell et al., 2008 [1]", "Randomised, double-blind, placebo-controlled crossover", "250 mg + 150 mg caffeine", "Better rapid visual information processing accuracy, faster simple reaction time and working-memory responses, and lower mental fatigue."]], "why": "The trial above paired 250 mg of L-theanine with 150 mg of caffeine. We use the same 250 mg alongside 140 mg.", "safety": "Well tolerated in the trial cited.", "refs": ["Haskell CF, Kennedy DO, Milne AL, Wesnes KA, Scholey AB. The effects of L-theanine, caffeine and their combination on cognition and mood. Biol Psychol 2008;77(2):113-122."]}, "vitamins": {"name": "Vitamin Blend (B+C+D)", "sci": "Eight B vitamins, L-ascorbic acid, cholecalciferol", "dose": "614 mg", "grade": "Moderate", "spec": [["Composition per can", "B1 15 mg · B2 15 mg · B3 50 mg · B5 23 mg · B6 10 mg · B7 150 µg · B9 400 µg · B12 10 µg · C 500 mg · D3 5 µg"], ["Class", "Water-soluble coenzymes and antioxidant, plus one fat-soluble secosteroid"], ["Time course", "Trial effects measured after 33 days of daily intake"], ["Acts on", "Energy · Focus · Mind"]], "summary": "B vitamins are the coenzymes of energy metabolism and neurotransmitter synthesis, and vitamin C is the brain's most concentrated antioxidant. Benefits build with daily intake.", "mech": ["B1, B2, B3 and B5 are coenzymes in the conversion of glucose to ATP, the brain's main fuel pathway.", "B6, folate and B12 drive one-carbon metabolism and the synthesis of serotonin, dopamine and noradrenaline.", "Vitamin C is a cofactor for dopamine β-hydroxylase, which converts dopamine to noradrenaline, and protects neurons from oxidative stress.", "Vitamin D acts through receptors expressed across the brain. Its acute effect on cognition is not established: it is included at the daily reference intake."], "evid": [["Kennedy et al., 2010 [1]", "Randomised, double-blind, placebo-controlled, parallel groups, n = 215 men aged 30 to 55, 33 days", "High-dose B complex with 500 mg vitamin C and minerals", "Lower perceived stress, better general mental health and vigour, better serial subtraction performance and less mental tiredness during demanding tasks."]], "why": "The B and C amounts reproduce the formula tested in the trial above. Vitamin D3 is set at 5 µg, 100% of the EU reference intake.", "safety": "One can a day. Vitamin B6 at 10 mg is close to the tolerable upper intake level of 12 mg per day set by EFSA in 2023 [2]. Riboflavin can colour urine bright yellow, which is harmless.", "refs": ["Kennedy DO, Veasey R, Watson A, Dodd F, Jones E, Maggini S, Haskell CF. Effects of high-dose B vitamin complex with vitamin C and minerals on subjective mood and performance in healthy males. Psychopharmacology 2010;211(1):55-68.", "EFSA NDA Panel. Scientific opinion on the tolerable upper intake level for vitamin B6. EFSA Journal 2023;21(5):e08006."]}, "ginger": {"name": "Ginger extract", "sci": "Zingiber officinale rhizome", "dose": "400 mg", "grade": "Preliminary", "spec": [["Class", "Phenolic botanical extract (gingerols, shogaols)"], ["Form", "Rhizome extract standardised to 5% gingerols (20 mg gingerols)"], ["Time course", "Trial effects measured after 1 and 2 months of daily intake"], ["Acts on", "Energy · Focus"]], "summary": "Ginger settles the stomach, which matters for a caffeinated drink taken while working. A controlled trial also reports gains in attention and working memory with daily use.", "mech": ["Gingerols and shogaols antagonise 5-HT3 receptors in the gut, the basis of ginger's anti-nausea action.", "Antioxidant and anti-inflammatory activity shown in cell and animal models.", "The cognitive trial recorded faster P300 latency and larger N100 and P300 amplitudes, electrophysiological markers of attention."], "evid": [["Saenghong et al., 2012 [1]", "Randomised, double-blind, placebo-controlled, n = 60 healthy women, mean age 53, 2 months", "400 mg or 800 mg per day", "Improved working memory and attention measures at both doses, with matching changes in event-related potentials. No adverse reactions reported."]], "why": "400 mg is the lower of the two doses that produced an effect in the trial above.", "safety": "No adverse reactions were reported in the trial cited.", "refs": ["Saenghong N, Wattanathorn J, Muchimapura S, Tongun T, Piyavhatkul N, Banchonglikitkul C, Kajsongkram T. Zingiber officinale improves cognitive function of the middle-aged healthy women. Evid Based Complement Alternat Med 2012;2012:383062."]}, "ginseng": {"name": "Panax ginseng", "sci": "Panax ginseng C.A. Meyer, root", "dose": "200 mg", "grade": "Moderate", "spec": [["Class", "Triterpene saponin botanical extract (ginsenosides)"], ["Form", "Root extract standardised to 4% ginsenosides, the G115 specification used in the trials"], ["Onset", "Effects measured from 60 min after a single dose"], ["Duration", "Sustained across at least 60 min of continuous testing"], ["Acts on", "Energy · Mind"]], "summary": "The active with the clearest single-dose evidence after caffeine. In healthy young adults, 200 mg improved mental arithmetic and reduced mental fatigue during sustained effort.", "mech": ["Ginsenosides Rb1 and Rg1 modulate cholinergic transmission and nitric oxide signalling in preclinical models.", "Single doses lowered blood glucose in the trials, and the authors link the cognitive effect to this gluco-regulatory action.", "The benefit appears during prolonged demand, which fits the last hours of a long session."], "evid": [["Reay et al., 2005 [1]", "Double-blind, placebo-controlled, balanced crossover, n = 30", "200 mg and 400 mg, single dose", "200 mg improved Serial Sevens performance and reduced mental fatigue across repeated testing. Both doses lowered blood glucose."]], "why": "200 mg of a 4% ginsenoside extract is the single dose that gave the clearest benefit in the trial above.", "safety": "Well tolerated in the trial cited. Ginseng lowers blood glucose slightly, which people on glucose-lowering medication should know.", "refs": ["Reay JL, Kennedy DO, Scholey AB. Single doses of Panax ginseng (G115) reduce blood glucose levels and improve cognitive performance during sustained mental activity. J Psychopharmacol 2005;19(4):357-365."]}, "magnesium": {"name": "Magnesium", "sci": "Magnesium citrate", "dose": "250 mg", "grade": "Moderate", "spec": [["Class", "Essential mineral, NMDA receptor modulator"], ["Form", "Magnesium citrate supplying 250 mg of elemental magnesium, 67% of the EU reference intake"], ["Time course", "Trial effects measured after 4 and 8 weeks of daily intake"], ["Acts on", "Energy · Focus · Mind"]], "summary": "Magnesium gates the NMDA receptor and takes part in every ATP-dependent reaction in the neuron. In a randomised trial, daily magnesium lowered perceived stress by more than 40% in eight weeks.", "mech": ["Blocks the NMDA receptor channel at rest, which limits excitatory overdrive under pressure.", "Cofactor for ATP: neurons cannot use their energy supply without it.", "Low magnesium status is associated with a stronger stress response, and stress in turn depletes magnesium."], "evid": [["Pouteau et al., 2018 [1]", "Randomised, single-blind, n = 264 stressed adults with low serum magnesium, 8 weeks", "300 mg per day", "Stress score (DASS-42) fell by 42% from baseline at week 8 with magnesium alone."]], "why": "The trial used 300 mg per day. We use 250 mg, the EU tolerable upper level for magnesium added to foods and supplements [2], the closest dose within that limit.", "safety": "One can a day. Above 250 mg per day of added magnesium, some people experience a mild laxative effect.", "refs": ["Pouteau E, Kabir-Ahmadi M, Noah L, Mazur A, Dye L, Hellhammer J, Pickering G, Dubray C. Superiority of magnesium and vitamin B6 over magnesium alone on severe stress in healthy adults with low magnesemia: a randomized, single-blind clinical trial. PLoS One 2018;13(12):e0208454.", "Scientific Committee on Food. Opinion on the tolerable upper intake level of magnesium. European Commission, 2001."]}, "lionsmane": {"name": "Lion's Mane", "sci": "Hericium erinaceus, fruiting body", "dose": "150 mg", "grade": "Preliminary", "spec": [["Class", "Medicinal mushroom extract (hericenones, β-glucans)"], ["Form", "20:1 fruiting-body concentrate: 150 mg corresponds to about 3 g of dried fruiting body"], ["Time course", "Effects reported from week 8 of daily intake"], ["Acts on", "Focus · Mind"]], "summary": "The only active here studied for its action on nerve growth. A controlled trial reports better cognitive scores with daily intake.", "mech": ["Hericenones from the fruiting body stimulate the synthesis of nerve growth factor (NGF) in cell and animal models.", "NGF supports the survival and maintenance of the cholinergic neurons involved in attention and memory.", "This mechanism has not yet been confirmed in humans."], "evid": [["Mori et al., 2009 [1]", "Randomised, double-blind, placebo-controlled, n = 30 adults aged 50 to 80 with mild cognitive impairment, 16 weeks", "3 g of fruiting-body powder per day", "Higher cognitive function scores than placebo at weeks 8, 12 and 16."]], "why": "150 mg of a 20:1 concentrate corresponds to the 3 g of fruiting body used in the trial above. Equivalence by extract ratio is nominal and depends on the supplier's assay.", "safety": "Well tolerated in the trial cited.", "refs": ["Mori K, Inatomi S, Ouchi K, Azumi Y, Tuchida T. Improving effects of the mushroom Yamabushitake (Hericium erinaceus) on mild cognitive impairment: a double-blind placebo-controlled clinical trial. Phytother Res 2009;23(3):367-372."]}}};
+  var dlg = document.getElementById("sheet");
+  if(!dlg || !data) return;
+  var last = null;
+  function el(tag, cls, text){ var n = document.createElement(tag); if(cls) n.className = cls; if(text != null) n.textContent = text; return n; }
+  function sec(title){ var s = el("section", "sh-sec"); s.appendChild(el("h3", "", title)); return s; }
+  function open(key, row){
+    var d = data.sheets[key]; if(!d) return;
+    var no = data.order.indexOf(key) + 1;
+    document.getElementById("shId").textContent = "Active " + (no < 10 ? "0" + no : no) + " of " + (data.order.length < 10 ? "0" : "") + data.order.length + " · Data sheet";
+    document.getElementById("shName").textContent = d.name;
+    document.getElementById("shSci").textContent = d.sci;
+    var b = document.getElementById("shBody"); b.textContent = "";
+    var top = el("div", "sh-top"), dose = el("p", "sh-dose", d.dose); dose.appendChild(el("small", "", "Per 250 ml can"));
+    var g = el("p", "sh-grade", "Human evidence"); g.appendChild(el("b", "", d.grade));
+    top.appendChild(dose); top.appendChild(g); b.appendChild(top);
+    var s = sec("Summary"); s.appendChild(el("p", "", d.summary)); b.appendChild(s);
+    s = sec("Profile"); var dl = el("dl", "sh-spec");
+    d.spec.forEach(function(r){ dl.appendChild(el("dt", "", r[0])); dl.appendChild(el("dd", "", r[1])); });
+    s.appendChild(dl); b.appendChild(s);
+    s = sec("Mechanism of action"); var ul = el("ul");
+    d.mech.forEach(function(t){ ul.appendChild(el("li", "", t)); }); s.appendChild(ul); b.appendChild(s);
+    s = sec("Key study"); var t = el("table", "sh-tbl"), th = el("thead"), tr = el("tr");
+    ["Source", "Design", "Dose", "Finding"].forEach(function(h){ tr.appendChild(el("th", "", h)); }); th.appendChild(tr); t.appendChild(th);
+    var tb = el("tbody");
+    d.evid.forEach(function(r){ var x = el("tr"); r.forEach(function(c, i){ var td = el("td", "", c); if(i) td.setAttribute("data-l", ["", "Design", "Dose", "Finding"][i]); x.appendChild(td); }); tb.appendChild(x); });
+    t.appendChild(tb); s.appendChild(t); b.appendChild(s);
+    s = sec("Why this dose"); s.appendChild(el("p", "", d.why)); b.appendChild(s);
+    s = sec("Safety and limits"); s.appendChild(el("p", "", d.safety)); b.appendChild(s);
+    s = sec("References"); var ol = el("ol", "sh-refs");
+    d.refs.forEach(function(r){ ol.appendChild(el("li", "", r)); }); s.appendChild(ol); b.appendChild(s);
+    b.appendChild(el("p", "sh-note", "Evidence grades are ours: Strong (regulatory consensus), Moderate (several controlled trials), Limited or Preliminary (few or small trials), Indirect (mechanism or related condition). Each sheet shows one representative study. This sheet summarises published research for information. Concentr8 is a food, not a medicine, and is not intended to diagnose, treat or prevent any condition."));
+    last = row || null;
+    b.scrollTop = 0;
+    if(typeof dlg.showModal === "function"){ if(!dlg.open) dlg.showModal(); } else { dlg.setAttribute("open", ""); }
+    b.scrollTop = 0;
+  }
+  function close(){ if(typeof dlg.close === "function") dlg.close(); else dlg.removeAttribute("open"); }
+  dlg.addEventListener("close", function(){ if(last && last.focus) last.focus(); });
+  dlg.addEventListener("click", function(e){ if(e.target === dlg) close(); });
+  document.getElementById("shClose").addEventListener("click", close);
+  var rows = document.querySelectorAll(".ing[data-ing]");
+  for(var i = 0; i < rows.length; i++){
+    (function(row){
+      row.addEventListener("click", function(){ open(row.getAttribute("data-ing"), row); });
+      row.addEventListener("keydown", function(e){ if(e.key === "Enter" || e.key === " "){ e.preventDefault(); open(row.getAttribute("data-ing"), row); } });
+    })(rows[i]);
+  }
 })();
 </script>
 </body>
